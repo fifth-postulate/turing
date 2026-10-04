@@ -7,6 +7,11 @@ if fail = LoadPackage("AutoDoc", "2018.02.14") then
     Error("AutoDoc version 2018.02.14 or newer is required.");
 fi;
 
-AutoDoc( rec( scaffold := true, autodoc := true ) );
+XMLEntities := rec();
+XMLEntities.turing := PackageEntity("turing");
+
+AutoDoc( rec( scaffold := rec( entities := XMLEntities ), autodoc := true ) );
+
+Unbind(XMLEntities);
 
 QUIT;

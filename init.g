@@ -4,4 +4,6 @@
 # Reading the declaration part of the package.
 #
 
+ReadPackage( "turing", "gap/categories.gd" );
+ReadPackage( "turing", "gap/tape.gd");
 ReadPackage( "turing", "gap/turing.gd");

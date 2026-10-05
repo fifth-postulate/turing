@@ -3,5 +3,6 @@
 #
 # Reading the implementation part of the package.
 
+ReadPackage( "turing", "gap/symbol.gi" );
 ReadPackage( "turing", "gap/tape.gi");
 ReadPackage( "turing", "gap/turing.gi");

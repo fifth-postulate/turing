@@ -6,6 +6,8 @@
 DeclareCategory("IsTuringObject", IsObject);
 DeclareCategory("IsTuringMachine", IsTuringObject);
 DeclareCategory("IsTuringTape", IsTuringObject);
+DeclareCategory("IsTuringSymbol", IsTuringObject);
+DeclareCategory("IsTuringBlank", IsTuringSymbol);
 #! The names of these categories are fairly descriptive.
 #! @EndGroup
 
@@ -14,4 +16,6 @@ DeclareCategory("IsTuringTape", IsTuringObject);
 #! The various types that &turing; objects can have.
 BindGlobal("TmObjectFamily", NewFamily("TmObjectFamily", IsTuringObject));
 BindGlobal("TmTapeType", NewType(TmObjectFamily, IsTuringTape));
+BindGlobal("TmSymbolType", NewType(TmObjectFamily, IsTuringSymbol));
+BindGlobal("TmSymbolBlankType", NewType(TmObjectFamily, IsTuringBlank and IsTuringSymbol));
 #! @EndGroup

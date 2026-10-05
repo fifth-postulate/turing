@@ -8,10 +8,14 @@
 #############################################################################
 ##
 
-#@local tape
+#@local tape, symbol
 gap> START_TEST("turing package: tape.tst");
 gap> LoadPackage("turing", false);;
 
 # Test tape creation
 gap> tape := TmTape();
 <tape empty>
+
+# Reading an empty tape
+gap> symbol := TmTapeRead(tape);
+<symbol blank>

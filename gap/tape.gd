@@ -22,3 +22,22 @@
 # TODO provide an example
 DeclareOperation("TmTape", []);
 #! @EndGroup
+
+
+#! @Section Reading and Writing
+
+#! @BeginGroup
+#! @GroupTitle Reading the tape
+#! @Arguments tape
+#! @Returns the symbol the <A>tape</A>s head is pointing at.
+#! @Description This operations scans the cell the &turing; <A>tape</A> head is
+#! pointing at and returns the <C>symbol</C> it has scanned.
+# TODO have a "see also section; at least to see symbol"
+#! @BeginExampleSession
+#! gap> tape := TmTape();
+#! <tape empty>
+#! gap> symbol := TmTapeRead(tape);
+#! <symbol blank>
+#! @EndExampleSession
+DeclareOperation("TmTapeRead", [IsTuringTape]);
+#! @EndGroup

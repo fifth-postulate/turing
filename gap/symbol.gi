@@ -23,6 +23,25 @@ end);
 BindConstant("TM_BLANK", Objectify(TmSymbolBlankType, rec()));
 InstallMethod(TmBlank, "for no args", [], {} -> TM_BLANK);
 
+
+#############################################################################
+## Representation
+#############################################################################
+
+InstallMethod(TmSymbolRepresentation, "for a blank symbol", [IsTuringBlank],
+function(blank)
+  return "_";
+end);
+
+InstallMethod(TmSymbolRepresentation, "for a non-blank-symbol", [IsTuringSymbol],
+function(symbol)
+  if Size(symbol!.repr) = 1 then
+    return symbol!.repr;
+  else
+    return StringFormatted("'{}''", symbol!.repr);
+  fi;
+end);
+
 #############################################################################
 ## ViewString
 #############################################################################

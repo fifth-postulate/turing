@@ -16,9 +16,9 @@ InstallMethod(TmTape, "for no arg", [],
 function()
   return Objectify(TmTapeType,
                     rec(
-                      left    := [],
-                      headIdx := 0,
-                      right   := []
+                      left  := [],
+                      head  := TmBlank(),
+                      right := []
                     ));
 end);
 
@@ -28,7 +28,12 @@ end);
 
 InstallMethod(TmTapeRead, "for a tape", [IsTuringTape],
 function(tape)
-  return TmBlank();
+  return tape!.head;
+end);
+
+InstallMethod(TmTapeWrite, "for a tape", [IsTuringTape, IsTuringSymbol],
+function(tape, symbol)
+  tape!.head := symbol;
 end);
 
 #############################################################################
@@ -37,9 +42,13 @@ end);
 
 InstallMethod(PrintString, "for a Turing tape", [IsTuringTape],
 function(tape)
-  local result;
+  local result, window;
 
-  result := "<tape empty>";
+  if IsTuringBlank(tape!.head) and ForAll(tape!.left, IsTuringBlank) and ForAll(tape!.right, IsTuringBlank) then
+    result := "<tape empty>";
+  else
+    result := StringFormatted("<tape |__[{}]__|>", TmSymbolRepresentation(tape!.head));
+  fi;
 
   return result;
 end);

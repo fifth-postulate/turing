@@ -23,3 +23,15 @@
 DeclareOperation("TmSymbol", [IsString]);
 DeclareOperation("TmBlank", []);
 #! @EndGroup
+
+#! @Section Representation
+
+#! @BeginGroup
+#! @Arguments symbol
+#! @Returns a string representing the symbol
+#! @Description each symbol needs a representation that can be printed. This
+#! operation returns that representation.
+## TODO create references to other constructs
+## TODO provide an example
+DeclareOperation("TmSymbolRepresentation", [IsTuringSymbol]);
+#! @EndGroup

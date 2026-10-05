@@ -40,4 +40,20 @@ DeclareOperation("TmTape", []);
 #! <symbol blank>
 #! @EndExampleSession
 DeclareOperation("TmTapeRead", [IsTuringTape]);
+
+#! @EndGroup
+#! @BeginGroup
+#! @GroupTitle Writing to the tape
+#! @Arguments tape, symbol
+#! @Returns nothing
+#! @Description This operations writes <A>symbol</A> to the cell the &turing;
+#! <A>tape</A> head is pointing at and
+# TODO have a "see also section; at least to see symbol"
+#! @BeginExampleSession
+#! gap> tape := TmTape();;
+#! gap> TmTapeWrite(tape, TmSymbol("I"));;
+#! gap> tape;
+#! <tape |__[I]__|>
+#! @EndExampleSession
+DeclareOperation("TmTapeWrite", [IsTuringTape, IsTuringSymbol]);
 #! @EndGroup

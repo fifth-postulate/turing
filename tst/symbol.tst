@@ -23,3 +23,9 @@ gap> blank := TmBlank();
 # All blank symbols are identical
 gap> IsIdenticalObj(blank, TmBlank());
 true
+
+# Test printing of symbol with "long" representation
+gap> symbol := TmSymbol("abc");
+<symbol "abc">
+gap> TmSymbolRepresentation(symbol);
+"'abc'"

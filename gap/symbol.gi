@@ -38,7 +38,7 @@ function(symbol)
   if Size(symbol!.repr) = 1 then
     return symbol!.repr;
   else
-    return StringFormatted("'{}''", symbol!.repr);
+    return StringFormatted("'{}'", symbol!.repr);
   fi;
 end);
 

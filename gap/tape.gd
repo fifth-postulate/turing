@@ -40,8 +40,8 @@ DeclareOperation("TmTape", []);
 #! <symbol blank>
 #! @EndExampleSession
 DeclareOperation("TmTapeRead", [IsTuringTape]);
-
 #! @EndGroup
+
 #! @BeginGroup
 #! @GroupTitle Writing to the tape
 #! @Arguments tape, symbol
@@ -56,4 +56,23 @@ DeclareOperation("TmTapeRead", [IsTuringTape]);
 #! <tape |__[I]__|>
 #! @EndExampleSession
 DeclareOperation("TmTapeWrite", [IsTuringTape, IsTuringSymbol]);
+#! @EndGroup
+
+#! @Section Moving
+
+#! @BeginGroup
+#! @@GroupTitle Moving the tape head
+#! @Arguments tape
+#! @Returns nothing
+#! @Description these operations move the tape head, either left or right.
+## TODO have a "see also section"
+#! @BeginExampleSession
+#! gap> tape := TmTape();;
+#! gap> TmTapeWrite(tape, TmSymbol("I"));;
+#! gap> TmTapeHeadRight(tape);;
+#! gap> tape;
+#! <tape |_I[_]__|>
+#! @EndExampleSession
+DeclareOperation("TmTapeHeadRight", [IsTuringTape]);
+DeclareOperation("TmTapeHeadLeft", [IsTuringTape]);
 #! @EndGroup

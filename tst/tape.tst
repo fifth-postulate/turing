@@ -24,3 +24,8 @@ gap> symbol := TmTapeRead(tape);
 gap> TmTapeWrite(tape, TmSymbol("I"));
 gap> tape;
 <tape |__[I]__|>
+
+# Move head right
+gap> TmTapeHeadRight(tape);
+gap> tape;
+<tape |_I[_]__|>

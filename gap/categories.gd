@@ -12,6 +12,7 @@ DeclareCategory("IsTuringState", IsTuringObject);
 DeclareCategory("IsTuringDirection", IsTuringObject);
 DeclareCategory("IsTuringLeft", IsTuringDirection);
 DeclareCategory("IsTuringRight", IsTuringDirection);
+DeclareCategory("IsTuringProgram", IsTuringObject);
 #! The names of these categories are fairly descriptive.
 #! @EndGroup
 
@@ -26,4 +27,5 @@ BindGlobal("TmStateType", NewType(TmObjectFamily, IsTuringState));
 BindGlobal("TmDirectionType", NewType(TmObjectFamily, IsTuringDirection));
 BindGlobal("TmLeftType", NewType(TmObjectFamily, IsTuringLeft and IsTuringDirection));
 BindGlobal("TmRightType", NewType(TmObjectFamily, IsTuringRight and IsTuringDirection));
+BindGlobal("TmProgramType", NewType(TmObjectFamily, IsTuringProgram));
 #! @EndGroup

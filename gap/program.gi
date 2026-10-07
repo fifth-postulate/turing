@@ -33,6 +33,18 @@ function(program, currentState, symbolRead, futureState, symbolToWrite, directio
   ));
 end);
 
+InstallMethod(TmLookup, "for a program", [IsTuringProgram, IsTuringState, IsTuringSymbol], 
+function(program, currentState, symbolRead)
+  local record, needle;
+
+  for record in program!.rules do
+    if record.key.state = currentState and record.key.symbol = symbolRead then
+      return Immutable(record.action);
+    fi;
+  od;
+  return fail;
+end);
+
 #############################################################################
 ## ViewString
 #############################################################################

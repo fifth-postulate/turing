@@ -8,7 +8,7 @@
 #############################################################################
 ##
 
-#@local program
+#@local program, action
 gap> START_TEST("turing package: program.tst");
 gap> LoadPackage("turing", false);;
 
@@ -25,3 +25,12 @@ gap> program;
 gap> TmAddRule(program, TmState(2), TmSymbol('I'), TmState(2), TmSymbol('I'), TmRight());;
 gap> program;
 <program with 2 rules>
+
+# Look up a rule
+gap> action := TmLookup(program, TmState(1), TmSymbol('I'));;
+gap> action.move = TmRight();
+true
+gap> action.state = TmState(2);
+true
+gap> action.symbol = TmBlank();
+true

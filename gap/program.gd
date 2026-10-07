@@ -28,7 +28,7 @@ DeclareOperation("TmProgram", []);
 #! @GroupTitle Adding rules to a program
 #! @Argument program, currentState, symbolRead, futureState, symbolToWrite, direction
 #! @Returns nothing
-#! @Descriptions Adds a rul to the <A>program</A>
+#! @Descriptions Adds a rule to the <A>program</A>
 #! 
 #! The rule to be added tells that a Turing Machine that is in state
 #! <A>currentState</A> and reads symbol <A>symbolRead</A> from the tape
@@ -36,4 +36,13 @@ DeclareOperation("TmProgram", []);
 #! <A>symbolToWrite</A> to the tape and move the tape head to the
 #! direction <A>direction</A>.
 DeclareOperation("TmAddRule", [IsTuringProgram, IsTuringState, IsTuringSymbol, IsTuringState, IsTuringSymbol, IsTuringDirection]);
+#! @EndGroup
+
+#! @BeginGroup
+#! @GroupTitle Looking up a rules from a program
+#! @Argument program, currentState, symbolRead
+#! @Returns a record containing the rule
+#! @Descriptions Looks up a rule from a <A>program</A>
+#! 
+DeclareOperation("TmLookup", [IsTuringProgram, IsTuringState, IsTuringSymbol]);
 #! @EndGroup

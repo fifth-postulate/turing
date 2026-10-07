@@ -39,6 +39,21 @@ function(symbol)
 end);
 
 #############################################################################
+## Equality
+#############################################################################
+
+InstallMethod(\=, "for Turing symbols", [IsTuringSymbol, IsTuringSymbol],
+function(left, right)
+  if IsTuringBlank(left) and IsTuringBlank(right) then
+    return true;
+  elif (not IsTuringBlank(left)) and (not IsTuringBlank(right)) then
+    return left!.repr = right!.repr;
+  else
+    return false;
+  fi;
+end);
+
+#############################################################################
 ## ViewString
 #############################################################################
 

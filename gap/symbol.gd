@@ -20,7 +20,7 @@
 #! @Description This retuns a &turing; symbol that can be used on a Tape.
 ## TODO reference tape
 ## TODO provide an example
-DeclareOperation("TmSymbol", [IsString]);
+DeclareOperation("TmSymbol", [IsChar]);
 DeclareOperation("TmBlank", []);
 #! @EndGroup
 

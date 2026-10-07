@@ -21,7 +21,7 @@ gap> symbol := TmTapeRead(tape);
 <symbol blank>
 
 # Writing a symbol to tape
-gap> TmTapeWrite(tape, TmSymbol("I"));
+gap> TmTapeWrite(tape, TmSymbol('I'));
 gap> tape;
 <tape |__[I]__|>
 

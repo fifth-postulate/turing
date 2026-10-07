@@ -12,7 +12,7 @@
 ## Constructors
 #############################################################################
 
-InstallMethod(TmSymbol, "for a string", [IsString],
+InstallMethod(TmSymbol, "for a character", [IsChar],
 function(representation)
   return Objectify(TmSymbolType,
                     rec(
@@ -35,11 +35,7 @@ end);
 
 InstallMethod(TmSymbolRepresentation, "for a non-blank-symbol", [IsTuringSymbol],
 function(symbol)
-  if Size(symbol!.repr) = 1 then
-    return symbol!.repr;
-  else
-    return StringFormatted("'{}'", symbol!.repr);
-  fi;
+  return [symbol!.repr];
 end);
 
 #############################################################################
@@ -53,6 +49,6 @@ end);
 
 InstallMethod(PrintString, "for a Turing symbol", [IsTuringSymbol],
 function(symbol)
-  return StringFormatted("<symbol \"{}\">", symbol!.repr);
+  return StringFormatted("<symbol {}>", symbol!.repr);
 end);
 

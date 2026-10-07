@@ -13,8 +13,8 @@ gap> START_TEST("turing package: symbol.tst");
 gap> LoadPackage("turing", false);;
 
 # Test symbol creation
-gap> symbol := TmSymbol("I");
-<symbol "I">
+gap> symbol := TmSymbol('I');
+<symbol 'I'>
 
 # Test blank symbol creation
 gap> blank := TmBlank();
@@ -24,8 +24,7 @@ gap> blank := TmBlank();
 gap> IsIdenticalObj(blank, TmBlank());
 true
 
-# Test printing of symbol with "long" representation
-gap> symbol := TmSymbol("abc");
-<symbol "abc">
+# Test representation of symbol
+gap> symbol := TmSymbol('I');;
 gap> TmSymbolRepresentation(symbol);
-"'abc'"
+"I"

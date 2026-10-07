@@ -11,6 +11,23 @@
 #! @Chapter
 #! @ChapterTitle Symbol
 
+#! @Section Categories and Types
+
+#! @BeginGroup
+#! @GroupTitle Categories
+#! We define the following categories. One for all &turing; symbols.
+#! and one for all the blank symbols.
+DeclareCategory("IsTuringSymbol", IsTuringObject);
+DeclareCategory("IsTuringBlank", IsTuringSymbol);
+#! @EndGroup
+
+#! @BeginGroup
+#! @GroupTitle Types
+#! The corresponding types associated with their categories.
+BindGlobal("TmSymbolType", NewType(TmObjectFamily, IsTuringSymbol));
+BindGlobal("TmSymbolBlankType", NewType(TmObjectFamily, IsTuringBlank and IsTuringSymbol));
+#! @EndGroup
+
 #! @Section Constructor
 
 #! @BeginGroup

@@ -8,6 +8,7 @@ DeclareCategory("IsTuringMachine", IsTuringObject);
 DeclareCategory("IsTuringTape", IsTuringObject);
 DeclareCategory("IsTuringSymbol", IsTuringObject);
 DeclareCategory("IsTuringBlank", IsTuringSymbol);
+DeclareCategory("IsTuringState", IsTuringObject);
 #! The names of these categories are fairly descriptive.
 #! @EndGroup
 
@@ -18,4 +19,5 @@ BindGlobal("TmObjectFamily", NewFamily("TmObjectFamily", IsTuringObject));
 BindGlobal("TmTapeType", NewType(TmObjectFamily, IsTuringTape));
 BindGlobal("TmSymbolType", NewType(TmObjectFamily, IsTuringSymbol));
 BindGlobal("TmSymbolBlankType", NewType(TmObjectFamily, IsTuringBlank and IsTuringSymbol));
+BindGlobal("TmStateType", NewType(TmObjectFamily, IsTuringState));
 #! @EndGroup

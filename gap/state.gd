@@ -17,12 +17,14 @@
 #! @GroupTitle Categories
 #! @Description the state category
 DeclareCategory("IsTuringState", IsTuringObject);
+DeclareCategory("IsTuringHaltState", IsTuringState);
 #! @EndGroup
 
 #! @BeginGroup
 #! @GroupTitle Types
 #! @Description the state type
 BindGlobal("TmStateType", NewType(TmObjectFamily, IsTuringState));
+BindGlobal("TmHaltStateType", NewType(TmObjectFamily, IsTuringHaltState));
 #! @EndGroup
 
 #! @Section Constructor
@@ -35,4 +37,5 @@ BindGlobal("TmStateType", NewType(TmObjectFamily, IsTuringState));
 ## TODO reference program
 ## TODO provide an example
 DeclareOperation("TmState", [IsPosInt]);
+DeclareOperation("TmHalt", [IsPosInt]);
 #! @EndGroup

@@ -19,3 +19,11 @@ q1
 # Two states with same index are equal
 gap> state = TmState(1);
 true
+
+# Halt states can be created as wel
+gap> state := TmHalt(1);
+h1
+
+# Two halt states with same index are equal
+gap> state = TmHalt(1);
+true

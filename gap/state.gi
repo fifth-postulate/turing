@@ -19,6 +19,13 @@ function(index)
                       index := index
                     ));
 end);
+InstallMethod(TmHalt, "for a postive integer", [IsPosInt],
+function(index)
+  return Objectify(TmHaltStateType,
+                    rec(
+                      index := index
+                    ));
+end);
 
 #############################################################################
 ## Equality
@@ -26,7 +33,13 @@ end);
 
 InstallMethod(\=, "for Turing states", [IsTuringState, IsTuringState],
 function(left, right)
-  return left!.index = right!.index;
+  if IsTuringHaltState(left) and IsTuringHaltState(right) then
+    return left!.index = right!.index;
+  elif (not IsTuringHaltState(left)) and (not IsTuringHaltState(right)) then
+    return left!.index = right!.index;
+  else
+    return false;
+  fi;
 end);
 
 #############################################################################
@@ -36,4 +49,8 @@ end);
 InstallMethod(PrintString, "for a state", [IsTuringState],
 function(state)
   return StringFormatted("q{}", state!.index);
+end);
+InstallMethod(PrintString, "for a halt state", [IsTuringHaltState],
+function(state)
+  return StringFormatted("h{}", state!.index);
 end);

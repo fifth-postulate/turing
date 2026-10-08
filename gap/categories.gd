@@ -5,7 +5,6 @@
 #! type of objects. These are machines and tape.
 DeclareCategory("IsTuringObject", IsObject);
 DeclareCategory("IsTuringMachine", IsTuringObject);
-DeclareCategory("IsTuringTape", IsTuringObject);
 DeclareCategory("IsTuringState", IsTuringObject);
 DeclareCategory("IsTuringDirection", IsTuringObject);
 DeclareCategory("IsTuringLeft", IsTuringDirection);
@@ -18,7 +17,6 @@ DeclareCategory("IsTuringProgram", IsTuringObject);
 #! @BeginGroup
 #! The various types that &turing; objects can have.
 BindGlobal("TmObjectFamily", NewFamily("TmObjectFamily", IsTuringObject));
-BindGlobal("TmTapeType", NewType(TmObjectFamily, IsTuringTape));
 BindGlobal("TmStateType", NewType(TmObjectFamily, IsTuringState));
 BindGlobal("TmDirectionType", NewType(TmObjectFamily, IsTuringDirection));
 BindGlobal("TmLeftType", NewType(TmObjectFamily, IsTuringLeft and IsTuringDirection));

@@ -12,6 +12,7 @@
 ## Constructors
 #############################################################################
 
+## TODO: use a dictionary to store the rules
 InstallMethod(TmProgram, "for no args", [],
 function()
   return Objectify(TmProgramType,

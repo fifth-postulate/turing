@@ -11,6 +11,20 @@
 #! @Chapter
 #! @ChapterTitle Tape
 
+#! @Section Categories and Types
+
+#! @BeginGroup
+#! @GroupTitle Categories
+#! @Description The tape category.
+DeclareCategory("IsTuringTape", IsTuringObject);
+#! @EndGroup
+
+#! @BeginGroup
+#! @GroupTitle
+#! @Decription The tape type
+BindGlobal("TmTapeType", NewType(TmObjectFamily, IsTuringTape));
+#! @EndGroup
+
 #! @Section Constructor
 
 #! @BeginGroup

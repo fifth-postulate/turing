@@ -35,10 +35,19 @@ function(machine)
     machine!.currentState := action.state;
     TmTapeWrite(machine!.tape, action.symbol);
     TmTapeHeadMove(machine!.tape, action.move);
+  else
+    Error(StringFormatted("no action in program for {} and {}",
+            PrintString(machine!.currentState),
+            PrintString(TmTapeRead(machine!.tape))));
   fi;
-  # TODO what to do if the action can not be found
 end);
 
+InstallMethod(TmRun, "for a machine", [IsTuringMachine],
+function(machine)
+  while not IsTuringHaltState(machine!.currentState) do
+    TmStep(machine);
+  od;
+end);
 #############################################################################
 ## ViewString
 #############################################################################

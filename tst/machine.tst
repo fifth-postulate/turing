@@ -17,6 +17,7 @@ gap> tape := TmTape();; TmTapeWrite(tape, TmSymbol('I'));;
 gap> program := TmProgram(TmState(1));;
 gap> TmAddRule(program, TmState(1), TmSymbol('I'), TmState(1), TmSymbol('I'), TmRight());;
 gap> TmAddRule(program, TmState(1), TmBlank(), TmState(2), TmSymbol('I'), TmLeft());;
+gap> TmAddRule(program, TmState(2), TmSymbol('I'), TmState(2), TmSymbol('I'), TmLeft());;
 gap> TmAddRule(program, TmState(2), TmBlank(), TmHalt(1), TmBlank(), TmRight());;
 gap> machine := TmMachine(tape, program);
 <machine q1 <tape |__[I]__|>>
@@ -25,3 +26,8 @@ gap> machine := TmMachine(tape, program);
 gap> TmStep(machine);;
 gap> machine;
 <machine q1 <tape |_I[_]__|>>
+
+# Let the machine run its course.
+gap> TmRun(machine);;
+gap> machine;
+<machine h1 <tape |__[I]I_|>>

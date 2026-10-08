@@ -49,3 +49,13 @@ DeclareOperation("TmMachine", [IsTuringTape, IsTuringProgram]);
 ## TODO provide an example
 DeclareOperation("TmStep", [IsTuringMachine]);
 #! @EndGroup
+
+#! @BeginGroup
+#! @GroupTitle Running the machine step
+#! @Argument machine
+#! @Returns nothing
+#! @Description let the <A>machine</A> run its course.
+## TODO reference program
+## TODO provide an example
+DeclareOperation("TmRun", [IsTuringMachine]);
+#! @EndGroup

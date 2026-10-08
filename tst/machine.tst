@@ -20,3 +20,8 @@ gap> TmAddRule(program, TmState(1), TmBlank(), TmState(2), TmSymbol('I'), TmLeft
 gap> TmAddRule(program, TmState(2), TmBlank(), TmHalt(1), TmBlank(), TmRight());;
 gap> machine := TmMachine(tape, program);
 <machine q1 <tape |__[I]__|>>
+
+# Let the machine take a step.
+gap> TmStep(machine);;
+gap> machine;
+<machine q1 <tape |_I[_]__|>>

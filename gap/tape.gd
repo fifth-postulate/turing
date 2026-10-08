@@ -89,4 +89,5 @@ DeclareOperation("TmTapeWrite", [IsTuringTape, IsTuringSymbol]);
 #! @EndExampleSession
 DeclareOperation("TmTapeHeadRight", [IsTuringTape]);
 DeclareOperation("TmTapeHeadLeft", [IsTuringTape]);
+DeclareOperation("TmTapeHeadMove", [IsTuringTape, IsTuringDirection]);
 #! @EndGroup

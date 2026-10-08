@@ -37,3 +37,15 @@ BindGlobal("TmMachineType", NewType(TmObjectFamily, IsTuringMachine));
 ## TODO provide an example
 DeclareOperation("TmMachine", [IsTuringTape, IsTuringProgram]);
 #! @EndGroup
+
+#! @Section Stepping and Running
+
+#! @BeginGroup
+#! @GroupTitle Progressing a single step
+#! @Argument machine
+#! @Returns nothing
+#! @Description let the <A>machine</A> take a single step through its program.
+## TODO reference program, tape
+## TODO provide an example
+DeclareOperation("TmStep", [IsTuringMachine]);
+#! @EndGroup

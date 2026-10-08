@@ -23,6 +23,23 @@ function(tape, program)
 end);
 
 #############################################################################
+## Stepping and Running
+#############################################################################
+
+InstallMethod(TmStep, "for a machine", [IsTuringMachine],
+function(machine)
+  local action;
+
+  action := TmLookup(machine!.program, machine!.currentState, TmTapeRead(machine!.tape));
+  if not (action = fail) then
+    machine!.currentState := action.state;
+    TmTapeWrite(machine!.tape, action.symbol);
+    TmTapeHeadMove(machine!.tape, action.move);
+  fi;
+  # TODO what to do if the action can not be found
+end);
+
+#############################################################################
 ## ViewString
 #############################################################################
 

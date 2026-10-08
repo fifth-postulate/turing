@@ -5,10 +5,10 @@
 #
 
 ReadPackage( "turing", "gap/categories.gd" );
+ReadPackage( "turing", "gap/direction.gd" );
 ReadPackage( "turing", "gap/symbol.gd" );
 ReadPackage( "turing", "gap/tape.gd" );
 ReadPackage( "turing", "gap/state.gd" );
-ReadPackage( "turing", "gap/direction.gd" );
 ReadPackage( "turing", "gap/program.gd" );
 ReadPackage( "turing", "gap/machine.gd" );
 ReadPackage( "turing", "gap/turing.gd" );

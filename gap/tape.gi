@@ -66,6 +66,15 @@ function(tape)
   tape!.head := symbol;
 end);
 
+InstallMethod(TmTapeHeadMove, "for a Turing tape and a direction", [IsTuringTape, IsTuringDirection],
+function(tape, direction)
+  if IsTuringLeft(direction) then
+    TmTapeHeadLeft(tape);
+  else
+    TmTapeHeadRight(tape);
+  fi;
+end);
+
 #############################################################################
 ## ViewString
 #############################################################################

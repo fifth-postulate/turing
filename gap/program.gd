@@ -11,6 +11,19 @@
 #! @Chapter
 #! @ChapterTitle Program
 
+#! @Section Categories and Types
+
+#! @BeginGroup
+#! @GroupTitle Categories
+#! @Description the program category
+DeclareCategory("IsTuringProgram", IsTuringObject);
+#! @EndGroup
+
+#! @BeginGroup
+#! @GroupTitle Types
+#! @Description the program type
+BindGlobal("TmProgramType", NewType(TmObjectFamily, IsTuringProgram));
+#! @EndGroup
 #! @Section Constructor
 
 #! @BeginGroup

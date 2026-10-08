@@ -6,7 +6,6 @@
 DeclareCategory("IsTuringObject", IsObject);
 DeclareCategory("IsTuringMachine", IsTuringObject);
 DeclareCategory("IsTuringState", IsTuringObject);
-DeclareCategory("IsTuringProgram", IsTuringObject);
 #! The names of these categories are fairly descriptive.
 #! @EndGroup
 
@@ -15,5 +14,4 @@ DeclareCategory("IsTuringProgram", IsTuringObject);
 #! The various types that &turing; objects can have.
 BindGlobal("TmObjectFamily", NewFamily("TmObjectFamily", IsTuringObject));
 BindGlobal("TmStateType", NewType(TmObjectFamily, IsTuringState));
-BindGlobal("TmProgramType", NewType(TmObjectFamily, IsTuringProgram));
 #! @EndGroup

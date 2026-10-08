@@ -13,10 +13,11 @@
 #############################################################################
 
 ## TODO: use a dictionary to store the rules
-InstallMethod(TmProgram, "for no args", [],
-function()
+InstallMethod(TmProgram, "for a state", [IsTuringState],
+function(startingState)
   return Objectify(TmProgramType,
                     rec(
+                      startingState := startingState,
                       rules := []
                     ));
 end);
@@ -45,6 +46,16 @@ function(program, currentState, symbolRead)
   od;
   return fail;
 end);
+
+#############################################################################
+## Start state
+#############################################################################
+
+InstallMethod(TmStartState, "for a program", [IsTuringProgram],
+function(program)
+  return program!.startingState;
+end);
+
 
 #############################################################################
 ## ViewString

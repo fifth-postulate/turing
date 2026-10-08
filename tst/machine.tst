@@ -14,7 +14,7 @@ gap> LoadPackage("turing", false);;
 
 # Test machine creation
 gap> tape := TmTape();; TmTapeWrite(tape, TmSymbol('I'));;
-gap> program := TmProgram();;
+gap> program := TmProgram(TmState(1));;
 gap> TmAddRule(program, TmState(1), TmSymbol('I'), TmState(1), TmSymbol('I'), TmRight());;
 gap> TmAddRule(program, TmState(1), TmBlank(), TmState(2), TmSymbol('I'), TmLeft());;
 gap> TmAddRule(program, TmState(2), TmBlank(), TmState(1), TmBlank(), TmRight());;

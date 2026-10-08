@@ -13,7 +13,7 @@ gap> START_TEST("turing package: program.tst");
 gap> LoadPackage("turing", false);;
 
 # Test program creation
-gap> program := TmProgram();
+gap> program := TmProgram(TmState(1));
 <program empty>
 
 # Addition of a rule
@@ -34,3 +34,7 @@ gap> action.state = TmState(2);
 true
 gap> action.symbol = TmBlank();
 true
+
+# Look up start state
+gap> TmStartState(program);
+q1

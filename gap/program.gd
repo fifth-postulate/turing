@@ -28,11 +28,14 @@ BindGlobal("TmProgramType", NewType(TmObjectFamily, IsTuringProgram));
 
 #! @BeginGroup
 #! @GroupTitle Creating a Program.
+#! @Argument startingState
 #! @Returns a &turing; program
 #! @Description This retuns a &turing; program that can be used in a Machine.
+#! 
+#! The progam will start in state <A>startingState</A>.
 ## TODO reference Machine
 ## TODO provide an example
-DeclareOperation("TmProgram", []);
+DeclareOperation("TmProgram", [IsTuringState]);
 #! @EndGroup
 
 #! @Section Rules
@@ -58,4 +61,13 @@ DeclareOperation("TmAddRule", [IsTuringProgram, IsTuringState, IsTuringSymbol, I
 #! @Descriptions Looks up a rule from a <A>program</A>
 #! 
 DeclareOperation("TmLookup", [IsTuringProgram, IsTuringState, IsTuringSymbol]);
+#! @EndGroup
+
+#! @Section Start State
+
+#! @BeginGroup
+#! @GroupTitle Accessing the start state
+#! @Returns the start state
+#! @Description returns the start state of this program.
+DeclareOperation("TmStartState", [IsTuringProgram]);
 #! @EndGroup

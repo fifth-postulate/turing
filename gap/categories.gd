@@ -4,14 +4,11 @@
 #! category. The categories following it are for further specificity on the
 #! type of objects. These are machines and tape.
 DeclareCategory("IsTuringObject", IsObject);
-DeclareCategory("IsTuringMachine", IsTuringObject);
-DeclareCategory("IsTuringState", IsTuringObject);
 #! The names of these categories are fairly descriptive.
 #! @EndGroup
 
-#! @Section Turing Types
+#! @Section Turing Family
 #! @BeginGroup
-#! The various types that &turing; objects can have.
+#! The family of &turing; objects.
 BindGlobal("TmObjectFamily", NewFamily("TmObjectFamily", IsTuringObject));
-BindGlobal("TmStateType", NewType(TmObjectFamily, IsTuringState));
 #! @EndGroup

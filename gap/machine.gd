@@ -1,6 +1,6 @@
 #############################################################################
 ##
-## state.gd
+## machine.gd
 ## Copyright (C) 2026                                       Daan van Berkel
 ##
 ## Licensing information can be found in the README file of this package
@@ -9,30 +9,31 @@
 ##
 
 #! @Chapter
-#! @ChapterTitle State
+#! @ChapterTitle Machine
 
 #! @Section Categories and Types
 
 #! @BeginGroup
 #! @GroupTitle Categories
 #! @Description the state category
-DeclareCategory("IsTuringState", IsTuringObject);
+DeclareCategory("IsTuringMachine", IsTuringObject);
 #! @EndGroup
 
 #! @BeginGroup
 #! @GroupTitle Types
 #! @Description the state type
-BindGlobal("TmStateType", NewType(TmObjectFamily, IsTuringState));
+BindGlobal("TmMachineType", NewType(TmObjectFamily, IsTuringMachine));
 #! @EndGroup
 
 #! @Section Constructor
 
 #! @BeginGroup
-#! @GroupTitle Creating a state.
-#! @Arguments index
-#! @Returns a &turing; state
-#! @Description This retuns a &turing; state that can be used in a Program.
-## TODO reference program
+#! @GroupTitle Creating a machine.
+#! @Arguments tape, program
+#! @Returns a &turing; Machine
+#! @Description This retuns a &turing; machine that uses <A>program</A> on 
+#! <A>tape</A>.
+## TODO reference program, tape
 ## TODO provide an example
-DeclareOperation("TmState", [IsPosInt]);
+DeclareOperation("TmMachine", [IsTuringTape, IsTuringProgram]);
 #! @EndGroup

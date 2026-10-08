@@ -8,4 +8,5 @@ ReadPackage( "turing", "gap/tape.gi" );
 ReadPackage( "turing", "gap/state.gi" );
 ReadPackage( "turing", "gap/direction.gi" );
 ReadPackage( "turing", "gap/program.gi" );
+ReadPackage( "turing", "gap/machine.gi" );
 ReadPackage( "turing", "gap/turing.gi" );

@@ -16,7 +16,7 @@ InstallMethod(TmMachine, "for a tape and program", [IsTuringTape, IsTuringProgra
 function(tape, program)
   return Objectify(TmMachineType,
                     rec(
-                      currentState := TmState(1),
+                      currentState := TmStartState(program),
                       tape := tape,
                       program := program
                     ));

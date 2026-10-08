@@ -19,11 +19,8 @@
 DeclareCategory("IsTuringTape", IsTuringObject);
 #! @EndGroup
 
-#! @BeginGroup
-#! @GroupTitle
-#! @Decription The tape type
+#! @Description The tape type
 BindGlobal("TmTapeType", NewType(TmObjectFamily, IsTuringTape));
-#! @EndGroup
 
 #! @Section Constructor
 
@@ -75,7 +72,7 @@ DeclareOperation("TmTapeWrite", [IsTuringTape, IsTuringSymbol]);
 #! @Section Moving
 
 #! @BeginGroup
-#! @@GroupTitle Moving the tape head
+#! @GroupTitle Moving the tape head
 #! @Arguments tape
 #! @Returns nothing
 #! @Description these operations move the tape head, either left or right.

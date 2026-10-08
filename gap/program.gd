@@ -19,16 +19,14 @@
 DeclareCategory("IsTuringProgram", IsTuringObject);
 #! @EndGroup
 
-#! @BeginGroup
-#! @GroupTitle Types
 #! @Description the program type
 BindGlobal("TmProgramType", NewType(TmObjectFamily, IsTuringProgram));
-#! @EndGroup
+
 #! @Section Constructor
 
 #! @BeginGroup
 #! @GroupTitle Creating a Program.
-#! @Argument startingState
+#! @Arguments startingState
 #! @Returns a &turing; program
 #! @Description This retuns a &turing; program that can be used in a Machine.
 #! 
@@ -42,9 +40,9 @@ DeclareOperation("TmProgram", [IsTuringState]);
 
 #! @BeginGroup
 #! @GroupTitle Adding rules to a program
-#! @Argument program, currentState, symbolRead, futureState, symbolToWrite, direction
+#! @Arguments program, currentState, symbolRead, futureState, symbolToWrite, direction
 #! @Returns nothing
-#! @Descriptions Adds a rule to the <A>program</A>
+#! @Description Adds a rule to the <A>program</A>
 #! 
 #! The rule to be added tells that a Turing Machine that is in state
 #! <A>currentState</A> and reads symbol <A>symbolRead</A> from the tape
@@ -56,9 +54,9 @@ DeclareOperation("TmAddRule", [IsTuringProgram, IsTuringState, IsTuringSymbol, I
 
 #! @BeginGroup
 #! @GroupTitle Looking up a rules from a program
-#! @Argument program, currentState, symbolRead
+#! @Arguments program, currentState, symbolRead
 #! @Returns a record containing the rule
-#! @Descriptions Looks up a rule from a <A>program</A>
+#! @Description Looks up a rule from a <A>program</A>
 #! 
 DeclareOperation("TmLookup", [IsTuringProgram, IsTuringState, IsTuringSymbol]);
 #! @EndGroup

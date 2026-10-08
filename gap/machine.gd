@@ -19,11 +19,8 @@
 DeclareCategory("IsTuringMachine", IsTuringObject);
 #! @EndGroup
 
-#! @BeginGroup
-#! @GroupTitle Types
 #! @Description the state type
 BindGlobal("TmMachineType", NewType(TmObjectFamily, IsTuringMachine));
-#! @EndGroup
 
 #! @Section Constructor
 
@@ -42,7 +39,7 @@ DeclareOperation("TmMachine", [IsTuringTape, IsTuringProgram]);
 
 #! @BeginGroup
 #! @GroupTitle Progressing a single step
-#! @Argument machine
+#! @Arguments machine
 #! @Returns nothing
 #! @Description let the <A>machine</A> take a single step through its program.
 ## TODO reference program, tape
@@ -52,7 +49,7 @@ DeclareOperation("TmStep", [IsTuringMachine]);
 
 #! @BeginGroup
 #! @GroupTitle Running the machine step
-#! @Argument machine
+#! @Arguments machine
 #! @Returns nothing
 #! @Description let the <A>machine</A> run its course.
 ## TODO reference program

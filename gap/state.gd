@@ -20,12 +20,9 @@ DeclareCategory("IsTuringState", IsTuringObject);
 DeclareCategory("IsTuringHaltState", IsTuringState);
 #! @EndGroup
 
-#! @BeginGroup
-#! @GroupTitle Types
 #! @Description the state type
 BindGlobal("TmStateType", NewType(TmObjectFamily, IsTuringState));
 BindGlobal("TmHaltStateType", NewType(TmObjectFamily, IsTuringHaltState));
-#! @EndGroup
 
 #! @Section Constructor
 

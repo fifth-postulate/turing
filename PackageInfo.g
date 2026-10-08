@@ -46,12 +46,12 @@ ArchiveFormats := ".tar.gz",
 AbstractHTML   :=  "",
 
 PackageDoc := rec(
-  BookName  := "turing",
+  BookName  := ~.PackageName,
   ArchiveURLSubset := ["doc"],
   HTMLStart := "doc/chap0_mj.html",
   PDFFile   := "doc/manual.pdf",
   SixFile   := "doc/manual.six",
-  LongTitle := "Simulate the operation of Turing machines",
+  LongTitle := ~.Subtitle,
 ),
 
 Dependencies := rec(

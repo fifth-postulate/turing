@@ -1,10 +1,11 @@
-#! @Section Turing Categories
+#! @Chapter
+#! @ChapterTitle General Definitions
+
+#! @Section Categories
 #! @BeginGroup
 #! Every object in &turing; belongs to the <C>IsTuringObject</C>
-#! category. The categories following it are for further specificity on the
-#! type of objects. These are machines and tape.
+#! category. Other categories are defined in there respective declaration files.
 DeclareCategory("IsTuringObject", IsObject);
-#! The names of these categories are fairly descriptive.
 #! @EndGroup
 
 #! @Section Turing Family

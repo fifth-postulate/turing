@@ -21,12 +21,9 @@ DeclareCategory("IsTuringSymbol", IsTuringObject);
 DeclareCategory("IsTuringBlank", IsTuringSymbol);
 #! @EndGroup
 
-#! @BeginGroup
-#! @GroupTitle Types
 #! The corresponding types associated with their categories.
 BindGlobal("TmSymbolType", NewType(TmObjectFamily, IsTuringSymbol));
 BindGlobal("TmSymbolBlankType", NewType(TmObjectFamily, IsTuringBlank and IsTuringSymbol));
-#! @EndGroup
 
 #! @Section Constructor
 

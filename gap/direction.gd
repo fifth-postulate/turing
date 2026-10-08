@@ -11,6 +11,27 @@
 #! @Chapter
 #! @ChapterTitle Direction
 
+#! @Section Categories and Types
+
+#! @BeginGroup
+#! @GroupTitle Categories
+#! @Description the direction categories
+DeclareCategory("IsTuringDirection", IsTuringObject);
+DeclareCategory("IsTuringLeft", IsTuringDirection);
+DeclareCategory("IsTuringRight", IsTuringDirection);
+#! @EndGroup
+
+#! @BeginGroup
+#! @GroupTitle Types
+#! @Description the direction typies
+BindGlobal("TmDirectionType", NewType(TmObjectFamily, IsTuringDirection));
+BindGlobal("TmLeftType", NewType(TmObjectFamily, IsTuringLeft and IsTuringDirection));
+BindGlobal("TmRightType", NewType(TmObjectFamily, IsTuringRight and IsTuringDirection));
+#! @EndGroup
+
+#! @Section Constructor
+
+
 #! @Section Constructor
 
 #! @BeginGroup

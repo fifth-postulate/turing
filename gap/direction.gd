@@ -25,8 +25,6 @@ BindGlobal("TmRightType", NewType(TmObjectFamily, IsTuringRight and IsTuringDire
 
 #! @Section Constructor
 
-#! @BeginGroup
-#! @GroupTitle Creating a direction.
 #! @Arguments
 #! @Returns a &turing; direction
 #! @Description This retuns a &turing; direction; either left or right.
@@ -34,4 +32,3 @@ BindGlobal("TmRightType", NewType(TmObjectFamily, IsTuringRight and IsTuringDire
 ## TODO provide an example
 DeclareOperation("TmLeft", []);
 DeclareOperation("TmRight", []);
-#! @EndGroup

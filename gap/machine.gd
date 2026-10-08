@@ -13,19 +13,14 @@
 
 #! @Section Categories and Types
 
-#! @BeginGroup
-#! @GroupTitle Categories
-#! @Description the state category
+#!
 DeclareCategory("IsTuringMachine", IsTuringObject);
-#! @EndGroup
 
-#! @Description the state type
+#!
 BindGlobal("TmMachineType", NewType(TmObjectFamily, IsTuringMachine));
 
 #! @Section Constructor
 
-#! @BeginGroup
-#! @GroupTitle Creating a machine.
 #! @Arguments tape, program
 #! @Returns a &turing; Machine
 #! @Description This retuns a &turing; machine that uses <A>program</A> on 
@@ -33,26 +28,19 @@ BindGlobal("TmMachineType", NewType(TmObjectFamily, IsTuringMachine));
 ## TODO reference program, tape
 ## TODO provide an example
 DeclareOperation("TmMachine", [IsTuringTape, IsTuringProgram]);
-#! @EndGroup
 
 #! @Section Stepping and Running
 
-#! @BeginGroup
-#! @GroupTitle Progressing a single step
 #! @Arguments machine
 #! @Returns nothing
 #! @Description let the <A>machine</A> take a single step through its program.
 ## TODO reference program, tape
 ## TODO provide an example
 DeclareOperation("TmStep", [IsTuringMachine]);
-#! @EndGroup
 
-#! @BeginGroup
-#! @GroupTitle Running the machine step
 #! @Arguments machine
 #! @Returns nothing
 #! @Description let the <A>machine</A> run its course.
 ## TODO reference program
 ## TODO provide an example
 DeclareOperation("TmRun", [IsTuringMachine]);
-#! @EndGroup

@@ -8,27 +8,30 @@
 #############################################################################
 ##
 
-#! @Chapter
-#! @ChapterTitle Direction
+#! @Chapter Direction
+#! A Tape head can move in either of two directions: left or right.
 
-#! @Section Categories and Types
+#! @Section Categories
 
-#! @Description the direction categories
+#! @Description the category of all direcitons.
 DeclareCategory("IsTuringDirection", IsTuringObject);
+
+#! @Description the category of the direction left.
 DeclareCategory("IsTuringLeft", IsTuringDirection);
+
+#! @Description the category of the direction right.
 DeclareCategory("IsTuringRight", IsTuringDirection);
 
-#! @Description the direction typies
 BindGlobal("TmDirectionType", NewType(TmObjectFamily, IsTuringDirection));
 BindGlobal("TmLeftType", NewType(TmObjectFamily, IsTuringLeft and IsTuringDirection));
 BindGlobal("TmRightType", NewType(TmObjectFamily, IsTuringRight and IsTuringDirection));
 
 #! @Section Constructor
 
-#! @Arguments
 #! @Returns a &turing; direction
-#! @Description This retuns a &turing; direction; either left or right.
-## TODO reference program
-## TODO provide an example
+#! @Description This returns the &turing; direction; Left.
 DeclareOperation("TmLeft", []);
+
+#! @Returns a &turing; direction
+#! @Description This returns the &turing; direction; Right.
 DeclareOperation("TmRight", []);

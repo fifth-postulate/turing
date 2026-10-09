@@ -8,15 +8,16 @@
 #############################################################################
 ##
 
-#! @Chapter
-#! @ChapterTitle Tape
+# TODO provide a better description
+# TODO provide an example
+
+#! @Chapter Tape
 
 #! @Section pear
 
 #!
 DeclareCategory("IsTuringTape", IsTuringObject);
 
-#!
 BindGlobal("TmTapeType", NewType(TmObjectFamily, IsTuringTape));
 
 #! @Section Constructor
@@ -24,8 +25,6 @@ BindGlobal("TmTapeType", NewType(TmObjectFamily, IsTuringTape));
 #! @Returns a &turing; tape
 #! @Description This operation creates a new &turing; tape.
 #! 
-# TODO provide a better description
-# TODO provide an example
 DeclareOperation("TmTape", []);
 
 
@@ -35,7 +34,6 @@ DeclareOperation("TmTape", []);
 #! @Returns the symbol the <A>tape</A>s head is pointing at.
 #! @Description This operations scans the cell the &turing; <A>tape</A> head is
 #! pointing at and returns the <C>symbol</C> it has scanned.
-# TODO have a "see also section; at least to see symbol"
 #! @BeginExampleSession
 #! gap> tape := TmTape();
 #! <tape empty>
@@ -48,7 +46,6 @@ DeclareOperation("TmTapeRead", [IsTuringTape]);
 #! @Returns nothing
 #! @Description This operations writes <A>symbol</A> to the cell the &turing;
 #! <A>tape</A> head is pointing at and
-# TODO have a "see also section; at least to see symbol"
 #! @BeginExampleSession
 #! gap> tape := TmTape();;
 #! gap> TmTapeWrite(tape, TmSymbol("I"));;
@@ -62,7 +59,6 @@ DeclareOperation("TmTapeWrite", [IsTuringTape, IsTuringSymbol]);
 #! @Arguments tape
 #! @Returns nothing
 #! @Description these operations move the tape head, either left or right.
-## TODO have a "see also section"
 #! @BeginExampleSession
 #! gap> tape := TmTape();;
 #! gap> TmTapeWrite(tape, TmSymbol("I"));;

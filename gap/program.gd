@@ -8,15 +8,17 @@
 #############################################################################
 ##
 
-#! @Chapter
-#! @ChapterTitle Program
+## TODO reference Machine
+## TODO provide an example
 
-#! @Section banana
+#! @Chapter Program
 
-#!
+#! @Section Categories
+
+#! @Description the category of all &turing; programs.
 DeclareCategory("IsTuringProgram", IsTuringObject);
 
-#!
+
 BindGlobal("TmProgramType", NewType(TmObjectFamily, IsTuringProgram));
 
 #! @Section Constructor
@@ -24,15 +26,13 @@ BindGlobal("TmProgramType", NewType(TmObjectFamily, IsTuringProgram));
 #! @Arguments startingState
 #! @Returns a &turing; program
 #! @Description This retuns a &turing; program that can be used in a Machine.
-#! 
 #! The progam will start in state <A>startingState</A>.
-## TODO reference Machine
-## TODO provide an example
 DeclareOperation("TmProgram", [IsTuringState]);
 
 #! @Section Rules
 
 #! @Arguments program, currentState, symbolRead, futureState, symbolToWrite, direction
+#! @Label Lookup
 #! @Returns nothing
 #! @Description Adds a rule to the <A>program</A>
 #! 
@@ -50,6 +50,7 @@ DeclareOperation("TmLookup", [IsTuringProgram, IsTuringState, IsTuringSymbol]);
 
 #! @Section Start State
 
+#! @Arguments program
 #! @Returns the start state
-#! @Description returns the start state of this program.
+#! @Description returns the start state of this <A>program</A>.
 DeclareOperation("TmStartState", [IsTuringProgram]);

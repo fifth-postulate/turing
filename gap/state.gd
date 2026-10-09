@@ -8,8 +8,10 @@
 #############################################################################
 ##
 
-#! @Chapter
-#! @ChapterTitle State
+## TODO reference program
+## TODO provide an example
+
+#! @Chapter State
 
 #! @Section Categories and Types
 
@@ -19,10 +21,7 @@ DeclareCategory("IsTuringState", IsTuringObject);
 #!
 DeclareCategory("IsTuringHaltState", IsTuringState);
 
-#! 
 BindGlobal("TmStateType", NewType(TmObjectFamily, IsTuringState));
-
-#!
 BindGlobal("TmHaltStateType", NewType(TmObjectFamily, IsTuringHaltState));
 
 #! @Section Constructor
@@ -30,7 +29,11 @@ BindGlobal("TmHaltStateType", NewType(TmObjectFamily, IsTuringHaltState));
 #! @Arguments index
 #! @Returns a &turing; state
 #! @Description This retuns a &turing; state that can be used in a Program.
-## TODO reference program
-## TODO provide an example
 DeclareOperation("TmState", [IsPosInt]);
+
+
+#! @Arguments index
+#! @Returns a &turing; halting state
+#! @Description This retuns a &turing; state that can be used in a Program and
+#! signifies that the machine has halted..
 DeclareOperation("TmHalt", [IsPosInt]);

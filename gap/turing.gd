@@ -23,17 +23,21 @@
 #! <URL><Link>https://en.wikipedia.org/wiki/Unary_numeral_system</Link><LinkText>unary number</LinkText></URL>.
 #! 
 #! @BeginExampleSession
-#! gap> LoadPackage("turing");
+#! gap> LoadPackage("turing");;
 #! gap> program := TmProgram(TmState(1));
+#! <program empty>
 #! gap> TmAddRule(program, TmState(1), TmSymbol('I'), TmState(1), TmSymbol('I'), TmRight());
 #! gap> TmAddRule(program, TmState(1), TmBlank()    , TmState(2), TmSymbol('I'), TmLeft());
 #! gap> TmAddRule(program, TmState(2), TmSymbol('I'), TmState(2), TmSymbol('I'), TmLeft());
 #! gap> TmAddRule(program, TmState(2), TmBlank()    , TmHalt(1) , TmBlank()    , TmRight());
 #! gap> tape := TmTape();
-#! gap> TmTapeWrite(tape, Symbol('I'));
+#! <tape empty>
+#! gap> TmTapeWrite(tape, TmSymbol('I'));
 #! gap> machine := TmMachine(tape, program);
+#! <machine q1 <tape |__[I]__|>>
 #! gap> TmRun(machine);
 #! gap> machine;
+#! <machine h1 <tape |__[I]I_|>>
 #! @EndExampleSession
 
 #! @Description Determines if <A>arg</A> is a &turing; object.

@@ -48,7 +48,7 @@ DeclareOperation("TmTapeRead", [IsTuringTape]);
 #! <A>tape</A> head is pointing at and
 #! @BeginExampleSession
 #! gap> tape := TmTape();;
-#! gap> TmTapeWrite(tape, TmSymbol("I"));;
+#! gap> TmTapeWrite(tape, TmSymbol('I'));;
 #! gap> tape;
 #! <tape |__[I]__|>
 #! @EndExampleSession
@@ -61,7 +61,7 @@ DeclareOperation("TmTapeWrite", [IsTuringTape, IsTuringSymbol]);
 #! @Description these operations move the tape head, either left or right.
 #! @BeginExampleSession
 #! gap> tape := TmTape();;
-#! gap> TmTapeWrite(tape, TmSymbol("I"));;
+#! gap> TmTapeWrite(tape, TmSymbol('I'));;
 #! gap> TmTapeHeadRight(tape);;
 #! gap> tape;
 #! <tape |_I[_]__|>

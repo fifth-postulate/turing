@@ -20,8 +20,18 @@
 #! @Section Example
 #! Below there is a session that demonstrated the Turing machine that
 #! increments a 
-#! <URL><Link>https://en.wikipedia.org/wiki/Unary_numeral_system</Link><LinkText>unary number</LinktText</URL>.
+#! <URL><Link>https://en.wikipedia.org/wiki/Unary_numeral_system</Link><LinkText>unary number</LinkText></URL>.
 #! 
 #! @BeginExampleSession
-#! gap> 
+#! gap> LoadPackage("turing");
+#! gap> program := TmProgram(TmState(1));
+#! gap> TmAddRule(program, TmState(1), TmSymbol('I'), TmState(1), TmSymbol('I'), TmRight());
+#! gap> TmAddRule(program, TmState(1), TmBlank()    , TmState(2), TmSymbol('I'), TmLeft());
+#! gap> TmAddRule(program, TmState(2), TmSymbol('I'), TmState(2), TmSymbol('I'), TmLeft());
+#! gap> TmAddRule(program, TmState(2), TmBlank()    , TmHalt(1) , TmBlank()    , TmRight());
+#! gap> tape := TmTape();
+#! gap> TmTapeWrite(tape, Symbol('I'));
+#! gap> machine := TmMachine(tape, program);
+#! gap> TmRun(machine);
+#! gap> machine;
 #! @EndExampleSession

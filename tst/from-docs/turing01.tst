@@ -10,19 +10,19 @@
 #
 gap> START_TEST("turing01.tst");
 
-# gap/tape.gd:37-42
+# gap/tape.gd:38-43
 gap> tape := TmTape();
 <tape empty>
 gap> symbol := TmTapeRead(tape);
 <symbol blank>
 
-# gap/tape.gd:49-54
+# gap/tape.gd:50-55
 gap> tape := TmTape();;
 gap> TmTapeWrite(tape, TmSymbol('I'));;
 gap> tape;
 <tape |__[I]__|>
 
-# gap/tape.gd:62-68
+# gap/tape.gd:63-69
 gap> tape := TmTape();;
 gap> TmTapeWrite(tape, TmSymbol('I'));;
 gap> TmTapeHeadRight(tape);;

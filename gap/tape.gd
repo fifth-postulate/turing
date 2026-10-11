@@ -15,7 +15,7 @@
 
 #! @Section pear
 
-#!
+#! @Description Determines if <A>arg</A> is a &turing; tape.
 DeclareCategory("IsTuringTape", IsTuringObject);
 
 BindGlobal("TmTapeType", NewType(TmObjectFamily, IsTuringTape));

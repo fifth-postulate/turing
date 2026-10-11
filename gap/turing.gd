@@ -40,7 +40,12 @@
 #! <machine h1 <tape |__[I]I_|>>
 #! @EndExampleSession
 
+#! @Section General Definitions
+#! The next definitions are global.
+
+#! @GroupTitle A family of filters
 #! @Description Determines if <A>arg</A> is a &turing; object.
 DeclareCategory("IsTuringObject", IsObject);
 
+#!
 BindGlobal("TmObjectFamily", NewFamily("TmObjectFamily", IsTuringObject));

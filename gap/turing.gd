@@ -43,7 +43,6 @@
 #! @Section General Definitions
 #! The next definitions are global.
 
-#! @GroupTitle A family of filters
 #! @Description Determines if <A>arg</A> is a &turing; object.
 DeclareCategory("IsTuringObject", IsObject);
 

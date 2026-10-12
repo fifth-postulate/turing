@@ -27,7 +27,7 @@ XMLEntities.turing := PackageEntity("turing");
 AutoDoc(
 rec( scaffold := rec( entities := XMLEntities ),
      extract_examples := rec( subdir := "tst/from-docs" ),
-     autodoc := true ) );
+     autodoc := rec( files := [ "doc.autodoc" ] ) ) );
 
 Unbind(PackageEntity);
 Unbind(UrlEntity);

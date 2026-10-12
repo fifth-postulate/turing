@@ -46,5 +46,4 @@
 #! @Description Determines if <A>arg</A> is a &turing; object.
 DeclareCategory("IsTuringObject", IsObject);
 
-#!
 BindGlobal("TmObjectFamily", NewFamily("TmObjectFamily", IsTuringObject));

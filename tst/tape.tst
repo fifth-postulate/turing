@@ -29,3 +29,11 @@ gap> tape;
 gap> TmTapeHeadRight(tape);
 gap> tape;
 <tape |_I[_]__|>
+
+# Create a tape from a string
+gap> TmTape("I_I");
+<tape |__[I]_I|>
+
+# Create a tape from an empty string
+gap> TmTape("");
+<tape empty>

@@ -49,6 +49,15 @@ BindGlobal("TmTapeType", NewType(TmObjectFamily, IsTuringTape));
 #! @Description This operation creates an empty &turing; tape.
 DeclareOperation("TmTape", []);
 
+#! @Arguments tape
+#! @Returns a &turing; tape
+#! @Description This operation creates an &turing; tape with <A>tape</A> in
+#! its cell.
+#!
+#! Each character in <A>tape</A> is converted to a symbol. The character `_` is
+#! special and is treated as the blank symbol.
+DeclareOperation("TmTape", [IsString]);
+
 #! @Section Reading and Writing
 
 #! @Arguments tape

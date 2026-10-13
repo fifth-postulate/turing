@@ -22,6 +22,30 @@ function()
                     ));
 end);
 
+InstallMethod(TmTape, "for string", [IsString],
+function(tape)
+  local head, right;
+  if IsEmpty(tape) then
+    head := TmBlank();
+    right := [];
+  else
+    head := TmSymbol(tape[1]);
+    right := List(tape{[2..Size(tape)]}, function(c)
+      if c = '_' then
+        return TmBlank();
+      else
+        return TmSymbol(c);
+      fi;
+    end);
+  fi;
+  return Objectify(TmTapeType,
+                    rec(
+                      left  := [],
+                      head  := head,
+                      right := Reversed(right)
+                    ));
+end);
+
 #############################################################################
 ## Reading and Writing
 #############################################################################

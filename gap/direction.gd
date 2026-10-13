@@ -26,7 +26,7 @@ BindGlobal("TmDirectionType", NewType(TmObjectFamily, IsTuringDirection));
 BindGlobal("TmLeftType", NewType(TmObjectFamily, IsTuringLeft and IsTuringDirection));
 BindGlobal("TmRightType", NewType(TmObjectFamily, IsTuringRight and IsTuringDirection));
 
-#! @Section Constructor
+#! Section Constructors
 
 #! @Returns a &turing; direction
 #! @Description This returns the &turing; direction; Left.

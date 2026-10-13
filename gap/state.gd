@@ -12,13 +12,32 @@
 ## TODO provide an example
 
 #! @Chapter State
-
-#! @Section Categories and Types
-
+#! A &turing; state determines how a &turing; machine acts upon reading a
+#! symbol from the tape.
 #!
+#! There are two kinds of state. __Regular states__ and __Halting states__.
+#! Halting states signal that the &turing; machine has halted.
+#!
+#! @BeginExampleSession
+#! gap> LoadPackage("turing");;
+#! gap> q := TmState(1);
+#! q1
+#! gap> h := TmHalt(1);
+#! h1
+#! gap> IsTuringHaltState(q);
+#! false
+#! gap> IsTuringState(h);
+#! true
+#! gap> q = h;
+#! false
+#! @EndExampleSession
+
+#! @Section Categories
+
+#! @Description determines if <A>arg</A> is a &turing; state.
 DeclareCategory("IsTuringState", IsTuringObject);
 
-#!
+#! @Description determines if <A>arg</A> is a &turing; __halting__ state.
 DeclareCategory("IsTuringHaltState", IsTuringState);
 
 BindGlobal("TmStateType", NewType(TmObjectFamily, IsTuringState));

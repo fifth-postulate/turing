@@ -1,5 +1,8 @@
 @Chapter Introduction
 
+&turing; is a &GAP; package that simulates
+<URL><Link>https://en.wikipedia.org/wiki/Turing_machine</Link><LinkText>Turing machines</LinkText></URL>.
+
 @Section What are Turing machines
 
 @Section Example

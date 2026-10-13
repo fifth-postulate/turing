@@ -3,9 +3,6 @@
 #
 #! @Chapter Introduction
 #!
-#! &turing; is a &GAP; package that simulates
-#! <URL><Link>https://en.wikipedia.org/wiki/Turing_machine</Link><LinkText>Turing machines</LinkText></URL>.
-#!
 #! @Section What are Turing machines
 #! A Turing machine is an abstract computing device dreamed up by Alan Turing
 #!

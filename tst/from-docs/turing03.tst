@@ -10,19 +10,45 @@
 #
 gap> START_TEST("turing03.tst");
 
-# doc/_Chapter_Tape.xml:47-52
+# doc/_Chapter_Tape.xml:24-35
+gap> LoadPackage("turing");;
+gap> tape := TmTape();
+<tape empty>
+gap> TmTapeWrite(tape, TmSymbol('I'));
+gap> TmTapeHeadLeft(tape);
+gap> TmTapeWrite(tape, TmSymbol('I'));
+gap> tape;
+<tape |__[I]I_|>
+gap> TmTapeRead(tape);
+<symbol 'I'>
+
+# doc/_Chapter_Tape.xml:75-80
 gap> tape := TmTape();
 <tape empty>
 gap> symbol := TmTapeRead(tape);
 <symbol blank>
 
-# doc/_Chapter_Tape.xml:64-69
+# doc/_Chapter_Tape.xml:92-97
 gap> tape := TmTape();;
 gap> TmTapeWrite(tape, TmSymbol('I'));;
 gap> tape;
 <tape |__[I]__|>
 
-# doc/_Chapter_Tape.xml:85-91
+# doc/_Chapter_Tape.xml:113-119
+gap> tape := TmTape();;
+gap> TmTapeWrite(tape, TmSymbol('I'));;
+gap> TmTapeHeadRight(tape);;
+gap> tape;
+<tape |_I[_]__|>
+
+# doc/_Chapter_Tape.xml:130-136
+gap> tape := TmTape();;
+gap> TmTapeWrite(tape, TmSymbol('I'));;
+gap> TmTapeHeadLeft(tape);;
+gap> tape;
+<tape |__[_]I_|>
+
+# doc/_Chapter_Tape.xml:147-153
 gap> tape := TmTape();;
 gap> TmTapeWrite(tape, TmSymbol('I'));;
 gap> TmTapeHeadRight(tape);;

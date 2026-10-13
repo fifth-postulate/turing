@@ -39,9 +39,11 @@
 #! and one for all the blank symbols.
 
 #! @Description the category of all &turing; symbols.
+#! @ChapterInfo Introduction, Definitions
 DeclareCategory("IsTuringSymbol", IsTuringObject);
 
 #! @Description the category of all &turing; __blank__ symbols.
+#! @ChapterInfo Introduction, Definitions
 DeclareCategory("IsTuringBlank", IsTuringSymbol);
 
 BindGlobal("TmSymbolType", NewType(TmObjectFamily, IsTuringSymbol));

@@ -22,33 +22,33 @@ gap> tape;
 gap> TmTapeRead(tape);
 <symbol 'I'>
 
-# doc/_Chapter_Tape.xml:75-80
+# doc/_Chapter_Tape.xml:74-79
 gap> tape := TmTape();
 <tape empty>
 gap> symbol := TmTapeRead(tape);
 <symbol blank>
 
-# doc/_Chapter_Tape.xml:92-97
+# doc/_Chapter_Tape.xml:91-96
 gap> tape := TmTape();;
 gap> TmTapeWrite(tape, TmSymbol('I'));;
 gap> tape;
 <tape |__[I]__|>
 
-# doc/_Chapter_Tape.xml:113-119
+# doc/_Chapter_Tape.xml:112-118
 gap> tape := TmTape();;
 gap> TmTapeWrite(tape, TmSymbol('I'));;
 gap> TmTapeHeadRight(tape);;
 gap> tape;
 <tape |_I[_]__|>
 
-# doc/_Chapter_Tape.xml:130-136
+# doc/_Chapter_Tape.xml:129-135
 gap> tape := TmTape();;
 gap> TmTapeWrite(tape, TmSymbol('I'));;
 gap> TmTapeHeadLeft(tape);;
 gap> tape;
 <tape |__[_]I_|>
 
-# doc/_Chapter_Tape.xml:147-153
+# doc/_Chapter_Tape.xml:146-152
 gap> tape := TmTape();;
 gap> TmTapeWrite(tape, TmSymbol('I'));;
 gap> TmTapeHeadRight(tape);;

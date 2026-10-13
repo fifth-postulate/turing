@@ -16,6 +16,7 @@
 #! @Section Categories
 
 #! @Description the category of &turing; machines.
+#! @ChapterInfo Introduction, Definitions
 DeclareCategory("IsTuringMachine", IsTuringObject);
 
 BindGlobal("TmMachineType", NewType(TmObjectFamily, IsTuringMachine));

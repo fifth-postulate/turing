@@ -31,8 +31,8 @@
 #! @Section Categories
 
 #! @Description Determines if an object is a &turing; program.
+#! @ChapterInfo Introduction, Definitions
 DeclareCategory("IsTuringProgram", IsTuringObject);
-
 
 BindGlobal("TmProgramType", NewType(TmObjectFamily, IsTuringProgram));
 

@@ -24,7 +24,7 @@ gap> LoadPackage("turing");;
 gap> TmBlank();
 <symbol blank>
 
-# doc/_Chapter_Symbol.xml:92-97
+# doc/_Chapter_Symbol.xml:74-79
 gap> LoadPackage("turing");;
 gap> symbol := TmSymbol('I');;
 gap> TmSymbolRepresentation(symbol);

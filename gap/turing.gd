@@ -40,7 +40,7 @@
 #! <machine h1 <tape |__[I]I_|>>
 #! @EndExampleSession
 
-#! @Section General Definitions
+#! @Section Definitions
 #! The next definitions are global.
 
 #! @Description Determines if <A>arg</A> is a &turing; object.

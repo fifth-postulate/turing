@@ -10,7 +10,7 @@
 #
 gap> START_TEST("turing01.tst");
 
-# doc/_Chapter_Introduction.xml:33-49
+# doc/_Chapter_Introduction.xml:139-155
 gap> LoadPackage("turing");;
 gap> program := TmProgram(TmState(1));
 <program empty>

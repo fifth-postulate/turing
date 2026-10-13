@@ -35,9 +35,11 @@
 #! @Section Categories
 
 #! @Description determines if <A>arg</A> is a &turing; state.
+#! @ChapterInfo Introduction, Definitions
 DeclareCategory("IsTuringState", IsTuringObject);
 
 #! @Description determines if <A>arg</A> is a &turing; __halting__ state.
+#! @ChapterInfo Introduction, Definitions
 DeclareCategory("IsTuringHaltState", IsTuringState);
 
 BindGlobal("TmStateType", NewType(TmObjectFamily, IsTuringState));

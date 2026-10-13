@@ -14,12 +14,15 @@
 #! @Section Categories
 
 #! @Description the category of all direcitons.
+#! @ChapterInfo Introduction, Definitions
 DeclareCategory("IsTuringDirection", IsTuringObject);
 
 #! @Description the category of the direction left.
+#! @ChapterInfo Introduction, Definitions
 DeclareCategory("IsTuringLeft", IsTuringDirection);
 
 #! @Description the category of the direction right.
+#! @ChapterInfo Introduction, Definitions
 DeclareCategory("IsTuringRight", IsTuringDirection);
 
 BindGlobal("TmDirectionType", NewType(TmObjectFamily, IsTuringDirection));

@@ -48,6 +48,15 @@ function(machine)
     TmStep(machine);
   od;
 end);
+
+InstallMethod(TmTrace, "for a machine", [IsTuringMachine],
+function(machine)
+  PrintFormatted("{}\n", PrintString(machine));
+  while not IsTuringHaltState(machine!.currentState) do
+    TmStep(machine);
+    PrintFormatted("{}\n", PrintString(machine));
+  od;
+end);
 #############################################################################
 ## ViewString
 #############################################################################

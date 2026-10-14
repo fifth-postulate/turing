@@ -31,3 +31,19 @@ gap> machine;
 gap> TmRun(machine);;
 gap> machine;
 <machine h1 <tape |__[I]I_|>>
+
+# Trace the operation of the machine
+gap> tape := TmTape("IIII");;
+gap> machine := TmMachine(tape, program);;
+gap> TmTrace(machine: window := 6);
+<machine q1 <tape |______[I]III___|>>
+<machine q1 <tape |_____I[I]II____|>>
+<machine q1 <tape |____II[I]I_____|>>
+<machine q1 <tape |___III[I]______|>>
+<machine q1 <tape |__IIII[_]______|>>
+<machine q2 <tape |___III[I]I_____|>>
+<machine q2 <tape |____II[I]II____|>>
+<machine q2 <tape |_____I[I]III___|>>
+<machine q2 <tape |______[I]IIII__|>>
+<machine q2 <tape |______[_]IIIII_|>>
+<machine h1 <tape |______[I]IIII__|>>

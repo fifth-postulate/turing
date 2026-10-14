@@ -121,7 +121,8 @@ function(tape)
   if IsTuringBlank(tape!.head) and ForAll(tape!.left, IsTuringBlank) and ForAll(tape!.right, IsTuringBlank) then
     result := "<tape empty>";
   else
-    window := 2;
+    window := ValueOption("window");
+    if window = fail then window := 2; fi;
     leftSymbols := List([0 .. (window - 1)], i -> fetchSymbolFromEnd(tape!.left, i));
     leftSymbols := Reversed(leftSymbols);
     left := FoldLeft(leftSymbols, function(acc, symbol)

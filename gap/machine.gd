@@ -12,6 +12,30 @@
 ## TODO provide an example
 
 #! @Chapter Machine
+#! We finally have everything in play to start using a &turing; machine. We
+#! need a tape and a program and we are set to run or step through the
+#! operations of the &turing; machine.
+#!
+#! @Section Example
+#! In this example we will step throught a &turing; machine that keeps writing
+#! a series of `I` to the its tape.
+#!
+#! @BeginExampleSession
+#! gap> LoadPackage("turing");;
+#! gap> tape := TmTape();
+#! <tape empty>
+#! gap> program := TmProgram(TmState(1));
+#! <program empty>
+#! gap> TmAddRule(program, TmState(1), TmBlank(), TmState(1), TmSymbol('I'), TmRight());
+#! gap> machine := TmMachine(tape, program);
+#! <machine q1 <tape empty>>
+#! gap> TmStep(machine);
+#! gap> machine;
+#! <machine q1 <tape |_I[_]__|>>
+#! gap> TmStep(machine);
+#! gap> machine;
+#! <machine q1 <tape |II[_]__|>>
+#! @EndExampleSession
 
 #! @Section Categories
 

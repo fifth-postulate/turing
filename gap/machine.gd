@@ -63,7 +63,10 @@ DeclareOperation("TmStep", [IsTuringMachine]);
 #! @Description let the <A>machine</A> run its course.
 DeclareOperation("TmRun", [IsTuringMachine]);
 
-#! @Argument machine
-#! @Description let the <A>machine</A> run its course, printing each
-#! step of the run.
-DeclareOperation("TmTrace", [IsTuringMachine]);
+#! @Section Inspection
+
+#! @Arguments machine
+#! @Returns the number of steps taken.
+#! @Description The number of steps this &turing; machine has taken during its
+#! computation.
+DeclareOperation("TmStepCount", [IsTuringMachine]);

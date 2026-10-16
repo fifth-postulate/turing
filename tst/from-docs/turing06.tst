@@ -10,7 +10,7 @@
 #
 gap> START_TEST("turing06.tst");
 
-# gap/machine.gd:23-38
+# doc/_Chapter_Machine.xml:18-33
 gap> LoadPackage("turing");;
 gap> tape := TmTape();
 <tape empty>

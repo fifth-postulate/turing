@@ -10,7 +10,7 @@
 #
 gap> START_TEST("turing04.tst");
 
-# gap/state.gd:21-33
+# doc/_Chapter_State.xml:14-26
 gap> LoadPackage("turing");;
 gap> q := TmState(1);
 q1

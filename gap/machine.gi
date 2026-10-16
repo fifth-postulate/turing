@@ -16,6 +16,7 @@ InstallMethod(TmMachine, "for a tape and program", [IsTuringTape, IsTuringProgra
 function(tape, program)
   return Objectify(TmMachineType,
                     rec(
+                      stepCount := 0,
                       currentState := TmStartState(program),
                       tape := tape,
                       program := program
@@ -32,6 +33,7 @@ function(machine)
 
   action := TmLookup(machine!.program, machine!.currentState, TmTapeRead(machine!.tape));
   if not (action = fail) then
+    machine!.stepCount := machine!.stepCount + 1;
     machine!.currentState := action.state;
     TmTapeWrite(machine!.tape, action.symbol);
     TmTapeHeadMove(machine!.tape, action.move);
@@ -49,14 +51,15 @@ function(machine)
   od;
 end);
 
-InstallMethod(TmTrace, "for a machine", [IsTuringMachine],
+#############################################################################
+## Inspection
+#############################################################################
+
+InstallMethod(TmStepCount, "for a machine", [IsTuringMachine],
 function(machine)
-  PrintFormatted("{}\n", PrintString(machine));
-  while not IsTuringHaltState(machine!.currentState) do
-    TmStep(machine);
-    PrintFormatted("{}\n", PrintString(machine));
-  od;
+  return machine!.stepCount;
 end);
+
 #############################################################################
 ## ViewString
 #############################################################################

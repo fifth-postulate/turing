@@ -63,6 +63,10 @@ DeclareOperation("TmStep", [IsTuringMachine]);
 #! @Description let the <A>machine</A> run its course.
 DeclareOperation("TmRun", [IsTuringMachine]);
 
+#! @Arguments machine
+#! @Description let the <A>machine</A> run its course, displaying each step.
+DeclareOperation("TmTrace", [IsTuringMachine]);
+
 #! @Section Inspection
 
 #! @Arguments machine

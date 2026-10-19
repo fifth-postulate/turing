@@ -10,7 +10,7 @@
 #
 gap> START_TEST("turing05.tst");
 
-# doc/_Chapter_Program.xml:15-22
+# gap/program.gd:22-29
 gap> LoadPackage("turing");;
 gap> program := TmProgram(TmState(1));
 <program empty>
@@ -18,7 +18,7 @@ gap> TmAddRule(program, TmState(1), TmBlank(), TmHalt(1), TmSymbol('I'), TmLeft(
 gap> program;
 <program with 1 rule>
 
-# doc/_Chapter_Program.xml:70-82
+# gap/program.gd:71-83
 gap> LoadPackage("turing");;
 gap> program := TmProgram(TmState(1));
 <program empty>
@@ -31,7 +31,7 @@ gap> action.symbol;
 gap> action.move;
 <direction left>
 
-# doc/_Chapter_Program.xml:99-104
+# gap/program.gd:92-97
 gap> LoadPackage("turing");;
 gap> program := TmProgram(TmState(1));;
 gap> TmStartState(program);

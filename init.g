@@ -11,4 +11,3 @@ ReadPackage( "turing", "gap/tape.gd" );
 ReadPackage( "turing", "gap/state.gd" );
 ReadPackage( "turing", "gap/program.gd" );
 ReadPackage( "turing", "gap/machine.gd" );
-ReadPackage( "turing", "gap/bb.gd" );

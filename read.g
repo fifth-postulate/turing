@@ -10,4 +10,3 @@ ReadPackage( "turing", "gap/state.gi" );
 ReadPackage( "turing", "gap/program.gi" );
 ReadPackage( "turing", "gap/machine.gi" );
 ReadPackage( "turing", "gap/turing.gi" );
-ReadPackage( "turing", "gap/bb.gi" );

@@ -51,6 +51,15 @@ function(machine)
   od;
 end);
 
+InstallMethod(TmTrace, "for a machine", [IsTuringMachine],
+function(machine)
+  while not IsTuringHaltState(machine!.currentState) do
+    Print(PrintString(machine), "\n");
+    TmStep(machine);
+  od;
+  Print(PrintString(machine), "\n");
+end);
+
 #############################################################################
 ## Inspection
 #############################################################################

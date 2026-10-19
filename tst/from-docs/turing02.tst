@@ -10,7 +10,7 @@
 #
 gap> START_TEST("turing02.tst");
 
-# doc/_Chapter_Symbol.xml:11-19
+# gap/symbol.gd:18-26
 gap> LoadPackage("turing");;
 gap> symbolI := TmSymbol('I');
 <symbol 'I'>
@@ -19,12 +19,12 @@ gap> symbolL := TmSymbol('L');
 gap> symbolI = symbolL;
 false
 
-# doc/_Chapter_Symbol.xml:24-28
+# gap/symbol.gd:30-34
 gap> LoadPackage("turing");;
 gap> TmBlank();
 <symbol blank>
 
-# doc/_Chapter_Symbol.xml:74-79
+# gap/symbol.gd:72-77
 gap> LoadPackage("turing");;
 gap> symbol := TmSymbol('I');;
 gap> TmSymbolRepresentation(symbol);

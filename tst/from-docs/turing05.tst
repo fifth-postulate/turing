@@ -18,7 +18,7 @@ gap> TmAddRule(program, TmState(1), TmBlank(), TmHalt(1), TmSymbol('I'), TmLeft(
 gap> program;
 <program with 1 rule>
 
-# gap/program.gd:71-83
+# gap/program.gd:72-84
 gap> LoadPackage("turing");;
 gap> program := TmProgram(TmState(1));
 <program empty>
@@ -31,7 +31,7 @@ gap> action.symbol;
 gap> action.move;
 <direction left>
 
-# gap/program.gd:92-97
+# gap/program.gd:93-98
 gap> LoadPackage("turing");;
 gap> program := TmProgram(TmState(1));;
 gap> TmStartState(program);

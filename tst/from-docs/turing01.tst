@@ -10,7 +10,7 @@
 #
 gap> START_TEST("turing01.tst");
 
-# gap/turing.gd:22-38
+# gap/turing.gd:23-39
 gap> LoadPackage("turing");;
 gap> program := TmProgram(TmState(1));
 <program empty>

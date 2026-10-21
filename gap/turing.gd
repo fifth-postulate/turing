@@ -11,8 +11,9 @@
 #! <Ref Chap="Chapter_State" Style="Text"/>.
 #!
 #! The <C>current state</C> and the <Ref Chap="Chapter_Symbol" Style="Text"/>
-#! read from the <C>tape</C> or used to <Ref Func="TmLookup"/> an __action__ 
+#! read from the <C>tape</C> or used to <Ref Label="TmLookup"/> an __action__ 
 #! to perform.
+#!
 #!
 #! @Section Example
 #! Below there is a session that demonstrated the Turing machine that

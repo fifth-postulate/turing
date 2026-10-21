@@ -58,6 +58,7 @@ DeclareOperation("TmProgram", [IsTuringState]);
 #! direction <A>direction</A>.
 DeclareOperation("TmAddRule", [IsTuringProgram, IsTuringState, IsTuringSymbol, IsTuringState, IsTuringSymbol, IsTuringDirection]);
 
+#! <Label Name="TmLookup"/>
 #! @Arguments program, currentState, symbolRead
 #! @Returns a record containing the rule
 #! @Description Looks up a rule from a <A>program</A>, with <A>currentState</A>

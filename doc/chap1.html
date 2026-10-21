@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>GAP (turing) - Chapter 1: Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap1"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap0.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap2.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap1_mj.html">[MathJax on]</a></p>
+<p><a id="X7DFB63A97E67C0A1" name="X7DFB63A97E67C0A1"></a></p>
+<div class="ChapSects"><a href="chap1.html#X7DFB63A97E67C0A1">1 <span class="Heading">Introduction</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap1.html#X7E0B4B9187BC2937">1.1 <span class="Heading">What are Turing machines</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap1.html#X85861B017AEEC50B">1.2 <span class="Heading">Example</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap1.html#X84541F61810C741D">1.3 <span class="Heading">Definitions</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X7885609A87FFD749">1.3-1 IsTuringDirection</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X8425A450868D159C">1.3-2 IsTuringLeft</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X7AFFC19D8152B287">1.3-3 IsTuringRight</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X7C790EDE79E7C6E1">1.3-4 IsTuringMachine</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X7AD91DBA7BD379D6">1.3-5 IsTuringProgram</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X7A41F39B7C2CB894">1.3-6 IsTuringState</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X8737E25F82170BC6">1.3-7 IsTuringHaltState</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X854D713F7F91F163">1.3-8 IsTuringSymbol</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X78CD52A584DF0203">1.3-9 IsTuringBlank</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X7EC0581B7E5C54D4">1.3-10 IsTuringTape</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap1.html#X7FD2A31D7B350653">1.3-11 IsTuringObject</a></span>
+</div></div>
+</div>
+
+<h3>1 <span class="Heading">Introduction</span></h3>
+
+<p><span class="URL"><a href="https://fifth-postulate.nl/turing/">turing</a></span> is a <strong class="pkg">GAP</strong> package that simulates <span class="URL"><a href="https://en.wikipedia.org/wiki/Turing_machine">Turing machines</a></span>.</p>
+
+<p><a id="X7E0B4B9187BC2937" name="X7E0B4B9187BC2937"></a></p>
+
+<h4>1.1 <span class="Heading">What are Turing machines</span></h4>
+
+<p>A Turing machine is an abstract computing device dreamed up by Alan Turing</p>
+
+<p>It consist of a <a href="chap3.html#X831862237FDAED86"><span class="RefLink"><span class="Heading">Tape</span></span></a>, a <a href="chap6.html#X7A4605C07A94C9F6"><span class="RefLink"><span class="Heading">Program</span></span></a> and a current <a href="chap5.html#X819E3E3080297347"><span class="RefLink"><span class="Heading">State</span></span></a>.</p>
+
+<p>The current <a href="chap5.html#X819E3E3080297347"><span class="RefLink"><span class="Heading">State</span></span></a> and the <a href="chap2.html#X86DC33A77B24C075"><span class="RefLink"><span class="Heading">Symbol</span></span></a> read from the <a href="chap3.html#X831862237FDAED86"><span class="RefLink"><span class="Heading">Tape</span></span></a> are used to <a href="chap6.html#X83D8DD588566BCE3"><span class="RefLink">6.2-1</span></a> an <em>action</em> to perform.</p>
+
+<p><a id="X85861B017AEEC50B" name="X85861B017AEEC50B"></a></p>
+
+<h4>1.2 <span class="Heading">Example</span></h4>
+
+<p>Below there is a session that demonstrated the Turing machine that increments a <span class="URL"><a href="https://en.wikipedia.org/wiki/Unary_numeral_system">unary number</a></span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LoadPackage("turing");;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">program := TmProgram(TmState(1));</span>
+&lt;program empty&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TmAddRule(program, TmState(1), TmSymbol('I'), TmState(1), TmSymbol('I'), TmRight());</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TmAddRule(program, TmState(1), TmBlank()    , TmState(2), TmSymbol('I'), TmLeft());</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TmAddRule(program, TmState(2), TmSymbol('I'), TmState(2), TmSymbol('I'), TmLeft());</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TmAddRule(program, TmState(2), TmBlank()    , TmHalt(1) , TmBlank()    , TmRight());</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">tape := TmTape();</span>
+&lt;tape empty&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TmTapeWrite(tape, TmSymbol('I'));</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">machine := TmMachine(tape, program);</span>
+&lt;machine q1 &lt;tape |__[I]__|&gt;&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TmRun(machine);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">machine;</span>
+&lt;machine h1 &lt;tape |__[I]I_|&gt;&gt;
+</pre></div>
+
+<p><a id="X84541F61810C741D" name="X84541F61810C741D"></a></p>
+
+<h4>1.3 <span class="Heading">Definitions</span></h4>
+
+<p><a id="X7885609A87FFD749" name="X7885609A87FFD749"></a></p>
+
+<h5>1.3-1 IsTuringDirection</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsTuringDirection</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;category&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code></p>
+
+<p>the category of all direcitons.</p>
+
+<p><a id="X8425A450868D159C" name="X8425A450868D159C"></a></p>
+
+<h5>1.3-2 IsTuringLeft</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsTuringLeft</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;category&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code></p>
+
+<p>the category of the direction left.</p>
+
+<p><a id="X7AFFC19D8152B287" name="X7AFFC19D8152B287"></a></p>
+
+<h5>1.3-3 IsTuringRight</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsTuringRight</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;category&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code></p>
+
+<p>the category of the direction right.</p>
+
+<p><a id="X7C790EDE79E7C6E1" name="X7C790EDE79E7C6E1"></a></p>
+
+<h5>1.3-4 IsTuringMachine</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsTuringMachine</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;category&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code></p>
+
+<p>the category of <span class="URL"><a href="https://fifth-postulate.nl/turing/">turing</a></span> machines.</p>
+
+<p><a id="X7AD91DBA7BD379D6" name="X7AD91DBA7BD379D6"></a></p>
+
+<h5>1.3-5 IsTuringProgram</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsTuringProgram</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;category&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code></p>
+
+<p>Determines if an object is a <span class="URL"><a href="https://fifth-postulate.nl/turing/">turing</a></span> program.</p>
+
+<p><a id="X7A41F39B7C2CB894" name="X7A41F39B7C2CB894"></a></p>
+
+<h5>1.3-6 IsTuringState</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsTuringState</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;category&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code></p>
+
+<p>determines if <var class="Arg">arg</var> is a <span class="URL"><a href="https://fifth-postulate.nl/turing/">turing</a></span> state.</p>
+
+<p><a id="X8737E25F82170BC6" name="X8737E25F82170BC6"></a></p>
+
+<h5>1.3-7 IsTuringHaltState</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsTuringHaltState</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;category&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code></p>
+
+<p>determines if <var class="Arg">arg</var> is a <span class="URL"><a href="https://fifth-postulate.nl/turing/">turing</a></span> <em>halting</em> state.</p>
+
+<p><a id="X854D713F7F91F163" name="X854D713F7F91F163"></a></p>
+
+<h5>1.3-8 IsTuringSymbol</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsTuringSymbol</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;category&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code></p>
+
+<p>the category of all <span class="URL"><a href="https://fifth-postulate.nl/turing/">turing</a></span> symbols.</p>
+
+<p><a id="X78CD52A584DF0203" name="X78CD52A584DF0203"></a></p>
+
+<h5>1.3-9 IsTuringBlank</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsTuringBlank</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;category&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code></p>
+
+<p>the category of all <span class="URL"><a href="https://fifth-postulate.nl/turing/">turing</a></span> <em>blank</em> symbols.</p>
+
+<p><a id="X7EC0581B7E5C54D4" name="X7EC0581B7E5C54D4"></a></p>
+
+<h5>1.3-10 IsTuringTape</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsTuringTape</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;category&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code></p>
+
+<p>Determines if <var class="Arg">arg</var> is a <span class="URL"><a href="https://fifth-postulate.nl/turing/">turing</a></span> tape.</p>
+
+<p>The next definitions are global.</p>
+
+<p><a id="X7FD2A31D7B350653" name="X7FD2A31D7B350653"></a></p>
+
+<h5>1.3-11 IsTuringObject</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsTuringObject</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;category&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code></p>
+
+<p>Determines if <var class="Arg">arg</var> is a <span class="URL"><a href="https://fifth-postulate.nl/turing/">turing</a></span> object.</p>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap0.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap2.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

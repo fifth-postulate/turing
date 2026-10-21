@@ -10,8 +10,8 @@ SetPackageInfo( rec(
 
 PackageName := "turing",
 Subtitle := "Simulate the operation of Turing machines",
-Version := "0.1",
-Date := "30/09/2026", # dd/mm/yyyy format
+Version := "1.0.0",
+Date := "21/10/2026", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
 
 Persons := [

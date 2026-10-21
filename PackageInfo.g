@@ -34,7 +34,7 @@ SourceRepository := rec(
     URL := "https://github.com/fifth-postulate/turing",
 ),
 IssueTrackerURL := Concatenation( ~.SourceRepository.URL, "/issues" ),
-PackageWWWHome  := "https://fifth-postulate.github.io/turing/",
+PackageWWWHome  := "https://fifth-postulate.nl/turing/",
 PackageInfoURL  := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
 README_URL      := Concatenation( ~.PackageWWWHome, "README.md" ),
 ArchiveURL      := Concatenation( ~.SourceRepository.URL,

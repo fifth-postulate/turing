@@ -8,11 +8,9 @@
 #############################################################################
 ##
 
-## TODO reference tape
-## TODO provide an example
-
 #! @Chapter Symbol
-#! Symbols are used to store information on the tape. It is akin to a
+#! Symbols are used to store information on the
+#! <Ref Chap="Chapter_Tape" Style="Text"/>. It is akin to a
 #! character, which is used in its constructor.
 #!
 #! @BeginExampleSession

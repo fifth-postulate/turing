@@ -8,13 +8,10 @@
 #############################################################################
 ##
 
-## TODO reference Machine
-## TODO provide an example
-
 #! @Chapter Program
-#! A &turing; program is the means with which a &turing; machine determines
-#! which __action__ to perform when in a certain state and reading a certain
-#! symbol.
+#! A &turing; program is the means with which a &turing; <Ref Chap="Chapter_Machine" Style="Text"/> determines
+#! which __action__ to perform when in a certain  <Ref Chap="Chapter_State" Style="Text"/>and reading a certain
+#! <Ref Chap="Chapter_Symbol" Style="Text"/>.
 #!
 #! It determines this by looking up the __rule__ that corresponds with the
 #! combined state and symbol key.
@@ -40,7 +37,8 @@ BindGlobal("TmProgramType", NewType(TmObjectFamily, IsTuringProgram));
 
 #! @Arguments startingState
 #! @Returns a &turing; program.
-#! @Description This retuns a &turing; program that can be used in a Machine.
+#! @Description This retuns a &turing; program that can be used in a
+#! <Ref Chap="Chapter_Machine" Style="Text"/>.
 #! The progam will start in state <A>startingState</A>.
 DeclareOperation("TmProgram", [IsTuringState]);
 
@@ -51,8 +49,10 @@ DeclareOperation("TmProgram", [IsTuringState]);
 #! @Returns nothing
 #! @Description Adds a rule to the <A>program</A>
 #! 
-#! The rule to be added tells that a Turing Machine that is in state
-#! <A>currentState</A> and reads symbol <A>symbolRead</A> from the tape
+#! The rule to be added tells that a &turing;
+#! <Ref Chap="Chapter_Machine" Style="Text"/> that is in state
+#! <A>currentState</A> and reads symbol <A>symbolRead</A>
+#! from the tape
 #! will transition to the state <A>futureState</A>, writes symbol
 #! <A>symbolToWrite</A> to the tape and move the tape head to the
 #! direction <A>direction</A>.

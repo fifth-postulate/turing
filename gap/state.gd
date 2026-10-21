@@ -8,14 +8,12 @@
 #############################################################################
 ##
 
-## TODO reference program
-## TODO provide an example
-
 #! @Chapter State
-#! A &turing; state determines how a &turing; machine acts upon reading a
-#! symbol from the tape.
+#! A &turing; state determines how a &turing; <Ref Chap="Chapter_Machine" Style="Text"/> acts upon reading a
+#! <Ref Chap="Chapter_Symbol" Style="Text"/> from the
+#! <Ref Chap="Chapter_Tape" Style="Text"/>.
 #!
-#! There are two kinds of state. __Regular states__ and __Halting states__.
+#! There are two kinds of state:  __Regular states__ and __Halting states__.
 #! Halting states signal that the &turing; machine has halted.
 #!
 #! @BeginExampleSession

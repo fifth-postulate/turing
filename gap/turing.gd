@@ -1,5 +1,5 @@
 #
-# turing: Simulate the operation of Turing machines
+# &turing;: Simulate the operation of Turing machines
 #
 #! @Chapter Introduction
 #!
@@ -7,13 +7,13 @@
 #! A Turing machine is an abstract computing device dreamed up by Alan Turing
 #!
 #! It consist of a <Ref Chap="Chapter_Tape" Style="Text"/>, a
-#! <Ref Chap="Chapter_Program" Style="Text"/> and a
+#! <Ref Chap="Chapter_Program" Style="Text"/> and a current
 #! <Ref Chap="Chapter_State" Style="Text"/>.
 #!
-#! The <C>current state</C> and the <Ref Chap="Chapter_Symbol" Style="Text"/>
-#! read from the <C>tape</C> or used to <Ref Label="TmLookup"/> an __action__ 
-#! to perform.
-#!
+#! The current <Ref Chap="Chapter_State" Style="Text"/> and the
+#! <Ref Chap="Chapter_Symbol" Style="Text"/>
+#! read from the <Ref Chap="Chapter_Tape" Style="Text"/> are used to
+#! <Ref Label="TmLookup"/> an __action__ to perform.
 #!
 #! @Section Example
 #! Below there is a session that demonstrated the Turing machine that

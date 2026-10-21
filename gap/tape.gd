@@ -8,10 +8,6 @@
 #############################################################################
 ##
 
-# TODO provide a better description
-# TODO provide an example
-# TODO reference other documentations
-
 #! @Chapter Tape
 #! A &turing; tape is the means by which a &turing; machine can store
 #! information that can be used in a calculation.
@@ -19,9 +15,10 @@
 #! A tape consist of
 #!
 #! * __cells__: there is an infinite number of them, both to the left and to
-#!              the right, and they can hold symbols.
-#! * __a head__: that scans a certain cell and can read and write symbols to it.
-#!               The head can also be moved left and right.
+#!              the right, and each cell can hold a 
+#!              <Ref Chap="Chapter_Symbol" Style="Text"/>
+#! * __a head__: that scans a certain cell and can read and write a <Ref Chap="Chapter_Symbol" Style="Text"/> to it.
+#!               The head can also be moved one of the <Ref Chap="Chapter_Direction" Style="Text"/>, left and right.
 #!
 #! @BeginExampleSession
 #! gap> LoadPackage("turing");;
@@ -53,9 +50,9 @@ DeclareOperation("TmTape", []);
 #! @Arguments tape
 #! @Returns a &turing; tape
 #! @Description This operation creates an &turing; tape with <A>tape</A> in
-#! its cell.
+#! its cells.
 #!
-#! Each character in <A>tape</A> is converted to a symbol. The character `_` is
+#! Each character in <A>tape</A> is converted to a <Ref Chap="Chapter_Symbol" Style="Text"/>. The character `_` is
 #! special and is treated as the blank symbol.
 DeclareOperation("TmTape", [IsString]);
 
@@ -64,7 +61,7 @@ DeclareOperation("TmTape", [IsString]);
 #! @Arguments tape
 #! @Returns the symbol the <A>tape</A>s head is pointing at.
 #! @Description This operations scans the cell the &turing; <A>tape</A> head is
-#! pointing at and returns the <C>symbol</C> it has scanned.
+#! pointing at and returns the <Ref Chap="Chapter_Symbol" Style="Text"/> it has scanned.
 #! @BeginExampleSession
 #! gap> tape := TmTape();
 #! <tape empty>
@@ -113,7 +110,7 @@ DeclareOperation("TmTapeHeadLeft", [IsTuringTape]);
 
 #! @Arguments tape, direction
 #! @Returns nothing
-#! @Description this operation moves the <A>tape</A> head in <A>direction</A>.
+#! @Description this operation moves the <A>tape</A> head in <Ref Chap="Chapter_Direction" Style="Text"/> <A>direction</A>.
 #! @BeginExampleSession
 #! gap> tape := TmTape();;
 #! gap> TmTapeWrite(tape, TmSymbol('I'));;

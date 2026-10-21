@@ -9,7 +9,7 @@
 ##
 
 #! @Chapter Direction
-#! A Tape head can move in either of two directions: left or right.
+#! A <Ref Chap="Chapter_Tape" Style="Text"/> __head__ can move in either of two directions: left or right.
 
 #! @Section Categories
 

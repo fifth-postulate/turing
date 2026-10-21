@@ -12,7 +12,6 @@
 ## Constructors
 #############################################################################
 
-## TODO: use a dictionary to store the rules
 InstallMethod(TmProgram, "for a state", [IsTuringState],
 function(startingState)
   return Objectify(TmProgramType,

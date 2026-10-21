@@ -8,13 +8,11 @@
 #############################################################################
 ##
 
-## TODO reference program, tape
-## TODO provide an example
-
 #! @Chapter Machine
 #! We finally have everything in play to start using a &turing; machine. We
-#! need a tape and a program and we are set to run or step through the
-#! operations of the &turing; machine.
+#! need a  <Ref Chap="Chapter_Tape" Style="Text"/>and a
+#! <Ref Chap="Chapter_Program" Style="Text"/> and we are set to run
+#! or step through the operations of the &turing; machine.
 #!
 #! @Section Example
 #! In this example we will step throught a &turing; machine that keeps writing

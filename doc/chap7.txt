@@ -1,0 +1,71 @@
+  
+  [1X7 [33X[0;0YMachine[133X[101X
+  
+  [33X[0;0YWe  finally have everything in play to start using a [5Xturing[105X machine. We need
+  a [14X'[33X[0;0YTape[133X'[114Xand a [14X'[33X[0;0YProgram[133X'[114X and we are set to run or step through the operations
+  of the [5Xturing[105X machine.[133X
+  
+  
+  [1X7.1 [33X[0;0YExample[133X[101X
+  
+  [33X[0;0YIn  this example we will step throught a [5Xturing[105X machine that keeps writing a
+  series of [10XI[110X to the its tape.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XLoadPackage("turing");;[127X[104X
+    [4X[25Xgap>[125X [27Xtape := TmTape();[127X[104X
+    [4X[28X<tape empty>[128X[104X
+    [4X[25Xgap>[125X [27Xprogram := TmProgram(TmState(1));[127X[104X
+    [4X[28X<program empty>[128X[104X
+    [4X[25Xgap>[125X [27XTmAddRule(program, TmState(1), TmBlank(), TmState(1), TmSymbol('I'), TmRight());[127X[104X
+    [4X[25Xgap>[125X [27Xmachine := TmMachine(tape, program);[127X[104X
+    [4X[28X<machine q1 <tape empty>>[128X[104X
+    [4X[25Xgap>[125X [27XTmStep(machine);[127X[104X
+    [4X[25Xgap>[125X [27Xmachine;[127X[104X
+    [4X[28X<machine q1 <tape |_I[_]__|>>[128X[104X
+    [4X[25Xgap>[125X [27XTmStep(machine);[127X[104X
+    [4X[25Xgap>[125X [27Xmachine;[127X[104X
+    [4X[28X<machine q1 <tape |II[_]__|>>[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X7.2 [33X[0;0YConstructor[133X[101X
+  
+  [1X7.2-1 TmMachine[101X
+  
+  [33X[1;0Y[29X[2XTmMachine[102X( [3Xtape[103X, [3Xprogram[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya [5Xturing[105X machine[133X
+  
+  [33X[0;0YThis returns a [5Xturing[105X machine that uses [3Xprogram[103X on [3Xtape[103X.[133X
+  
+  
+  [1X7.3 [33X[0;0YStepping and Running[133X[101X
+  
+  [1X7.3-1 TmStep[101X
+  
+  [33X[1;0Y[29X[2XTmStep[102X( [3Xmachine[103X ) [32X operation[133X
+  
+  [33X[0;0Ylet the [3Xmachine[103X take a single step through its program.[133X
+  
+  [1X7.3-2 TmRun[101X
+  
+  [33X[1;0Y[29X[2XTmRun[102X( [3Xmachine[103X ) [32X operation[133X
+  
+  [33X[0;0Ylet the [3Xmachine[103X run its course.[133X
+  
+  [1X7.3-3 TmTrace[101X
+  
+  [33X[1;0Y[29X[2XTmTrace[102X( [3Xmachine[103X ) [32X operation[133X
+  
+  [33X[0;0Ylet the [3Xmachine[103X run its course, displaying each step.[133X
+  
+  
+  [1X7.4 [33X[0;0YInspection[133X[101X
+  
+  [1X7.4-1 TmStepCount[101X
+  
+  [33X[1;0Y[29X[2XTmStepCount[102X( [3Xmachine[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ythe number of steps taken.[133X
+  
+  [33X[0;0YThe number of steps this [5Xturing[105X machine has taken during its computation.[133X
+  

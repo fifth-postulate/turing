@@ -1,0 +1,24 @@
+  
+  [1X4 [33X[0;0YDirection[133X[101X
+  
+  [33X[0;0YA [14X'[33X[0;0YTape[133X'[114X [13Xhead[113X can move in either of two directions: left or right.[133X
+  
+  
+  [1X4.1 [33X[0;0YCategories[133X[101X
+  
+  [33X[0;0YSection Constructors[133X
+  
+  [1X4.1-1 TmLeft[101X
+  
+  [33X[1;0Y[29X[2XTmLeft[102X(  ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya [5Xturing[105X direction[133X
+  
+  [33X[0;0YThis returns the [5Xturing[105X direction; Left.[133X
+  
+  [1X4.1-2 TmRight[101X
+  
+  [33X[1;0Y[29X[2XTmRight[102X(  ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya [5Xturing[105X direction[133X
+  
+  [33X[0;0YThis returns the [5Xturing[105X direction; Right.[133X
+  

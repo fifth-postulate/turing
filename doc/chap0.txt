@@ -1,1 +1,89 @@
-Placeholder
+  
+  
+                                    [1X turing [101X
+  
+  
+                  [1X Simulate the operation of Turing machines [101X
+  
+  
+                                      0.1
+  
+  
+                               30 September 2026
+  
+  
+                                Daan van Berkel
+  
+  
+  
+  Daan van Berkel
+      Email:    [7Xmailto:daan.v.berkel.1980@gmail.com[107X
+      Homepage: [7Xhttps://dvberkel.nl[107X
+  
+  -------------------------------------------------------
+  
+  
+  [1XContents (turing)[101X
+  
+  1 [33X[0;0YIntroduction[133X
+    1.1 [33X[0;0YWhat are Turing machines[133X
+    1.2 [33X[0;0YExample[133X
+    1.3 [33X[0;0YDefinitions[133X
+      1.3-1 IsTuringDirection
+      1.3-2 IsTuringLeft
+      1.3-3 IsTuringRight
+      1.3-4 IsTuringMachine
+      1.3-5 IsTuringProgram
+      1.3-6 IsTuringState
+      1.3-7 IsTuringHaltState
+      1.3-8 IsTuringSymbol
+      1.3-9 IsTuringBlank
+      1.3-10 IsTuringTape
+      1.3-11 IsTuringObject
+  2 [33X[0;0YSymbol[133X
+    2.1 [33X[0;0YCategories[133X
+    2.2 [33X[0;0YConstructor[133X
+      2.2-1 TmSymbol
+      2.2-2 TmBlank
+    2.3 [33X[0;0YRepresentation[133X
+      2.3-1 TmSymbolRepresentation
+  3 [33X[0;0YTape[133X
+    3.1 [33X[0;0YConstructor[133X
+      3.1-1 TmTape
+      3.1-2 TmTape
+    3.2 [33X[0;0YReading and Writing[133X
+      3.2-1 TmTapeRead
+      3.2-2 TmTapeWrite
+    3.3 [33X[0;0YMoving[133X
+      3.3-1 TmTapeHeadRight
+      3.3-2 TmTapeHeadLeft
+      3.3-3 TmTapeHeadMove
+  4 [33X[0;0YDirection[133X
+    4.1 [33X[0;0YCategories[133X
+      4.1-1 TmLeft
+      4.1-2 TmRight
+  5 [33X[0;0YState[133X
+    5.1 [33X[0;0YConstructor[133X
+      5.1-1 TmState
+      5.1-2 TmHalt
+  6 [33X[0;0YProgram[133X
+    6.1 [33X[0;0YConstructor[133X
+      6.1-1 TmProgram
+    6.2 [33X[0;0YRules[133X
+      6.2-1 TmAddRule
+      6.2-2 TmLookup
+    6.3 [33X[0;0YStart State[133X
+      6.3-1 TmStartState
+  7 [33X[0;0YMachine[133X
+    7.1 [33X[0;0YExample[133X
+    7.2 [33X[0;0YConstructor[133X
+      7.2-1 TmMachine
+    7.3 [33X[0;0YStepping and Running[133X
+      7.3-1 TmStep
+      7.3-2 TmRun
+      7.3-3 TmTrace
+    7.4 [33X[0;0YInspection[133X
+      7.4-1 TmStepCount
+  
+  
+  [32X

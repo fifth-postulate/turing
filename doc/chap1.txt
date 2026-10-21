@@ -1,0 +1,123 @@
+  
+  [1X1 [33X[0;0YIntroduction[133X[101X
+  
+  [33X[0;0Y[5Xturing[105X    is    a    [5XGAP[105X    package    that    simulates   Turing   machines
+  ([7Xhttps://en.wikipedia.org/wiki/Turing_machine[107X).[133X
+  
+  
+  [1X1.1 [33X[0;0YWhat are Turing machines[133X[101X
+  
+  [33X[0;0YA Turing machine is an abstract computing device dreamed up by Alan Turing[133X
+  
+  [33X[0;0YIt consist of a [14X'[33X[0;0YTape[133X'[114X, a [14X'[33X[0;0YProgram[133X'[114X and a current [14X'[33X[0;0YState[133X'[114X.[133X
+  
+  [33X[0;0YThe  current [14X'[33X[0;0YState[133X'[114X and the [14X'[33X[0;0YSymbol[133X'[114X read from the [14X'[33X[0;0YTape[133X'[114X are used to [14X6.2-1[114X
+  an [13Xaction[113X to perform.[133X
+  
+  
+  [1X1.2 [33X[0;0YExample[133X[101X
+  
+  [33X[0;0YBelow  there  is  a  session  that  demonstrated  the  Turing  machine  that
+  increments                  a                  unary                  number
+  ([7Xhttps://en.wikipedia.org/wiki/Unary_numeral_system[107X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XLoadPackage("turing");;[127X[104X
+    [4X[25Xgap>[125X [27Xprogram := TmProgram(TmState(1));[127X[104X
+    [4X[28X<program empty>[128X[104X
+    [4X[25Xgap>[125X [27XTmAddRule(program, TmState(1), TmSymbol('I'), TmState(1), TmSymbol('I'), TmRight());[127X[104X
+    [4X[25Xgap>[125X [27XTmAddRule(program, TmState(1), TmBlank()    , TmState(2), TmSymbol('I'), TmLeft());[127X[104X
+    [4X[25Xgap>[125X [27XTmAddRule(program, TmState(2), TmSymbol('I'), TmState(2), TmSymbol('I'), TmLeft());[127X[104X
+    [4X[25Xgap>[125X [27XTmAddRule(program, TmState(2), TmBlank()    , TmHalt(1) , TmBlank()    , TmRight());[127X[104X
+    [4X[25Xgap>[125X [27Xtape := TmTape();[127X[104X
+    [4X[28X<tape empty>[128X[104X
+    [4X[25Xgap>[125X [27XTmTapeWrite(tape, TmSymbol('I'));[127X[104X
+    [4X[25Xgap>[125X [27Xmachine := TmMachine(tape, program);[127X[104X
+    [4X[28X<machine q1 <tape |__[I]__|>>[128X[104X
+    [4X[25Xgap>[125X [27XTmRun(machine);[127X[104X
+    [4X[25Xgap>[125X [27Xmachine;[127X[104X
+    [4X[28X<machine h1 <tape |__[I]I_|>>[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X1.3 [33X[0;0YDefinitions[133X[101X
+  
+  [1X1.3-1 IsTuringDirection[101X
+  
+  [33X[1;0Y[29X[2XIsTuringDirection[102X( [3Xarg[103X ) [32X Category[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0Ythe category of all direcitons.[133X
+  
+  [1X1.3-2 IsTuringLeft[101X
+  
+  [33X[1;0Y[29X[2XIsTuringLeft[102X( [3Xarg[103X ) [32X Category[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0Ythe category of the direction left.[133X
+  
+  [1X1.3-3 IsTuringRight[101X
+  
+  [33X[1;0Y[29X[2XIsTuringRight[102X( [3Xarg[103X ) [32X Category[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0Ythe category of the direction right.[133X
+  
+  [1X1.3-4 IsTuringMachine[101X
+  
+  [33X[1;0Y[29X[2XIsTuringMachine[102X( [3Xarg[103X ) [32X Category[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0Ythe category of [5Xturing[105X machines.[133X
+  
+  [1X1.3-5 IsTuringProgram[101X
+  
+  [33X[1;0Y[29X[2XIsTuringProgram[102X( [3Xarg[103X ) [32X Category[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0YDetermines if an object is a [5Xturing[105X program.[133X
+  
+  [1X1.3-6 IsTuringState[101X
+  
+  [33X[1;0Y[29X[2XIsTuringState[102X( [3Xarg[103X ) [32X Category[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0Ydetermines if [3Xarg[103X is a [5Xturing[105X state.[133X
+  
+  [1X1.3-7 IsTuringHaltState[101X
+  
+  [33X[1;0Y[29X[2XIsTuringHaltState[102X( [3Xarg[103X ) [32X Category[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0Ydetermines if [3Xarg[103X is a [5Xturing[105X [13Xhalting[113X state.[133X
+  
+  [1X1.3-8 IsTuringSymbol[101X
+  
+  [33X[1;0Y[29X[2XIsTuringSymbol[102X( [3Xarg[103X ) [32X Category[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0Ythe category of all [5Xturing[105X symbols.[133X
+  
+  [1X1.3-9 IsTuringBlank[101X
+  
+  [33X[1;0Y[29X[2XIsTuringBlank[102X( [3Xarg[103X ) [32X Category[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0Ythe category of all [5Xturing[105X [13Xblank[113X symbols.[133X
+  
+  [1X1.3-10 IsTuringTape[101X
+  
+  [33X[1;0Y[29X[2XIsTuringTape[102X( [3Xarg[103X ) [32X Category[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0YDetermines if [3Xarg[103X is a [5Xturing[105X tape.[133X
+  
+  [33X[0;0YThe next definitions are global.[133X
+  
+  [1X1.3-11 IsTuringObject[101X
+  
+  [33X[1;0Y[29X[2XIsTuringObject[102X( [3Xarg[103X ) [32X Category[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0YDetermines if [3Xarg[103X is a [5Xturing[105X object.[133X
+  

@@ -1,0 +1,87 @@
+  
+  [1X6 [33X[0;0YProgram[133X[101X
+  
+  [33X[0;0YA [5Xturing[105X program is the means with which a [5Xturing[105X [14X'[33X[0;0YMachine[133X'[114X determines which
+  [13Xaction[113X to perform when in a certain [14X'[33X[0;0YState[133X'[114Xand reading a certain [14X'[33X[0;0YSymbol[133X'[114X.[133X
+  
+  [33X[0;0YIt determines this by looking up the [13Xrule[113X that corresponds with the combined
+  state and symbol key.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XLoadPackage("turing");;[127X[104X
+    [4X[25Xgap>[125X [27Xprogram := TmProgram(TmState(1));[127X[104X
+    [4X[28X<program empty>[128X[104X
+    [4X[25Xgap>[125X [27XTmAddRule(program, TmState(1), TmBlank(), TmHalt(1), TmSymbol('I'), TmLeft());[127X[104X
+    [4X[25Xgap>[125X [27Xprogram;[127X[104X
+    [4X[28X<program with 1 rule>[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X6.1 [33X[0;0YConstructor[133X[101X
+  
+  [1X6.1-1 TmProgram[101X
+  
+  [33X[1;0Y[29X[2XTmProgram[102X( [3XstartingState[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya [5Xturing[105X program.[133X
+  
+  [33X[0;0YThis  retuns  a  [5Xturing[105X  program that can be used in a [14X'[33X[0;0YMachine[133X'[114X. The progam
+  will start in state [3XstartingState[103X.[133X
+  
+  
+  [1X6.2 [33X[0;0YRules[133X[101X
+  
+  [1X6.2-1 TmAddRule[101X
+  
+  [33X[1;0Y[29X[2XTmAddRule[102X( [3Xprogram[103X, [3XcurrentState[103X, [3XsymbolRead[103X, [3XfutureState[103X, [3XsymbolToWrite[103X, [3Xdirection[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ynothing[133X
+  
+  [33X[0;0YAdds a rule to the [3Xprogram[103X[133X
+  
+  [33X[0;0YThe  rule  to  be  added  tells  that  a  [5Xturing[105X  [14X'[33X[0;0YMachine[133X'[114X that is in state
+  [3XcurrentState[103X  and  reads  symbol [3XsymbolRead[103X from the tape will transition to
+  the  state [3XfutureState[103X, writes symbol [3XsymbolToWrite[103X to the tape and move the
+  tape head to the direction [3Xdirection[103X.[133X
+  
+  [1X6.2-2 TmLookup[101X
+  
+  [33X[1;0Y[29X[2XTmLookup[102X( [3Xprogram[103X, [3XcurrentState[103X, [3XsymbolRead[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya record containing the rule[133X
+  
+  [33X[0;0YLooks up a rule from a [3Xprogram[103X, with [3XcurrentState[103X and [3XsymbolRead[103X as key.[133X
+  
+  [33X[0;0YThe  record  has  keys  [10Xstate[110X, [10Xsymbol[110X and [10Xmove[110X. The [10Xstate[110X key determines the
+  next  state  of the [5Xturing[105X machine, the [10Xsymbol[110X key determines what symbol to
+  write  to  the  [5Xturing[105X  machines  tape  and  the  [10Xmove[110X  key determines which
+  direction the head moves in.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XLoadPackage("turing");;[127X[104X
+    [4X[25Xgap>[125X [27Xprogram := TmProgram(TmState(1));[127X[104X
+    [4X[28X<program empty>[128X[104X
+    [4X[25Xgap>[125X [27XTmAddRule(program, TmState(1), TmBlank(), TmHalt(1), TmSymbol('I'), TmLeft());[127X[104X
+    [4X[25Xgap>[125X [27Xaction := TmLookup(program, TmState(1), TmBlank());;[127X[104X
+    [4X[25Xgap>[125X [27Xaction.state;[127X[104X
+    [4X[28Xh1[128X[104X
+    [4X[25Xgap>[125X [27Xaction.symbol;[127X[104X
+    [4X[28X<symbol 'I'>[128X[104X
+    [4X[25Xgap>[125X [27Xaction.move;[127X[104X
+    [4X[28X<direction left>[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X6.3 [33X[0;0YStart State[133X[101X
+  
+  [1X6.3-1 TmStartState[101X
+  
+  [33X[1;0Y[29X[2XTmStartState[102X( [3Xprogram[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ythe start state[133X
+  
+  [33X[0;0Yreturns the start state of this [3Xprogram[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XLoadPackage("turing");;[127X[104X
+    [4X[25Xgap>[125X [27Xprogram := TmProgram(TmState(1));;[127X[104X
+    [4X[25Xgap>[125X [27XTmStartState(program);[127X[104X
+    [4X[28Xq1[128X[104X
+  [4X[32X[104X
+  

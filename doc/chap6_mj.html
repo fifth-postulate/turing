@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<title>GAP (turing) - Chapter 6: Program</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap6"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chap7_mj.html">7</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap5_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap7_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap6.html">[MathJax off]</a></p>
+<p><a id="X7A4605C07A94C9F6" name="X7A4605C07A94C9F6"></a></p>
+<div class="ChapSects"><a href="chap6_mj.html#X7A4605C07A94C9F6">6 <span class="Heading">Program</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6_mj.html#X7ABF649E831D4D8E">6.1 <span class="Heading">Constructor</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X856D988087404114">6.1-1 TmProgram</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6_mj.html#X833EAA8C86356F42">6.2 <span class="Heading">Rules</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X83D8DD588566BCE3">6.2-1 TmAddRule</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X80E7C69D7A59C66A">6.2-2 TmLookup</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6_mj.html#X7FA9D24C7DC892BD">6.3 <span class="Heading">Start State</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X81686E478100A0D6">6.3-1 TmStartState</a></span>
+</div></div>
+</div>
+
+<h3>6 <span class="Heading">Program</span></h3>
+
+<p>A <strong class="pkg">turing</strong> program is the means with which a <strong class="pkg">turing</strong> <a href="chap7_mj.html#X82388F4082F55013"><span class="RefLink"><span class="Heading">Machine</span></span></a> determines which <em>action</em> to perform when in a certain <a href="chap5_mj.html#X819E3E3080297347"><span class="RefLink"><span class="Heading">State</span></span></a>and reading a certain <a href="chap2_mj.html#X86DC33A77B24C075"><span class="RefLink"><span class="Heading">Symbol</span></span></a>.</p>
+
+<p>It determines this by looking up the <em>rule</em> that corresponds with the combined state and symbol key.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LoadPackage("turing");;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">program := TmProgram(TmState(1));</span>
+&lt;program empty&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TmAddRule(program, TmState(1), TmBlank(), TmHalt(1), TmSymbol('I'), TmLeft());</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">program;</span>
+&lt;program with 1 rule&gt;
+</pre></div>
+
+<p><a id="X7ABF649E831D4D8E" name="X7ABF649E831D4D8E"></a></p>
+
+<h4>6.1 <span class="Heading">Constructor</span></h4>
+
+<p><a id="X856D988087404114" name="X856D988087404114"></a></p>
+
+<h5>6.1-1 TmProgram</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TmProgram</code>( <var class="Arg">startingState</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a <strong class="pkg">turing</strong> program.</p>
+
+<p>This retuns a <strong class="pkg">turing</strong> program that can be used in a <a href="chap7_mj.html#X82388F4082F55013"><span class="RefLink"><span class="Heading">Machine</span></span></a>. The progam will start in state <var class="Arg">startingState</var>.</p>
+
+<p><a id="X833EAA8C86356F42" name="X833EAA8C86356F42"></a></p>
+
+<h4>6.2 <span class="Heading">Rules</span></h4>
+
+<p><a id="X83D8DD588566BCE3" name="X83D8DD588566BCE3"></a></p>
+
+<h5>6.2-1 TmAddRule</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TmAddRule</code>( <var class="Arg">program</var>, <var class="Arg">currentState</var>, <var class="Arg">symbolRead</var>, <var class="Arg">futureState</var>, <var class="Arg">symbolToWrite</var>, <var class="Arg">direction</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: nothing</p>
+
+<p>Adds a rule to the <var class="Arg">program</var></p>
+
+<p>The rule to be added tells that a <strong class="pkg">turing</strong> <a href="chap7_mj.html#X82388F4082F55013"><span class="RefLink"><span class="Heading">Machine</span></span></a> that is in state <var class="Arg">currentState</var> and reads symbol <var class="Arg">symbolRead</var> from the tape will transition to the state <var class="Arg">futureState</var>, writes symbol <var class="Arg">symbolToWrite</var> to the tape and move the tape head to the direction <var class="Arg">direction</var>.</p>
+
+<p><a id="X80E7C69D7A59C66A" name="X80E7C69D7A59C66A"></a></p>
+
+<h5>6.2-2 TmLookup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TmLookup</code>( <var class="Arg">program</var>, <var class="Arg">currentState</var>, <var class="Arg">symbolRead</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a record containing the rule</p>
+
+<p>Looks up a rule from a <var class="Arg">program</var>, with <var class="Arg">currentState</var> and <var class="Arg">symbolRead</var> as key.</p>
+
+<p>The record has keys <code class="code">state</code>, <code class="code">symbol</code> and <code class="code">move</code>. The <code class="code">state</code> key determines the next state of the <strong class="pkg">turing</strong> machine, the <code class="code">symbol</code> key determines what symbol to write to the <strong class="pkg">turing</strong> machines tape and the <code class="code">move</code> key determines which direction the head moves in.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LoadPackage("turing");;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">program := TmProgram(TmState(1));</span>
+&lt;program empty&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TmAddRule(program, TmState(1), TmBlank(), TmHalt(1), TmSymbol('I'), TmLeft());</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">action := TmLookup(program, TmState(1), TmBlank());;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">action.state;</span>
+h1
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">action.symbol;</span>
+&lt;symbol 'I'&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">action.move;</span>
+&lt;direction left&gt;
+</pre></div>
+
+<p><a id="X7FA9D24C7DC892BD" name="X7FA9D24C7DC892BD"></a></p>
+
+<h4>6.3 <span class="Heading">Start State</span></h4>
+
+<p><a id="X81686E478100A0D6" name="X81686E478100A0D6"></a></p>
+
+<h5>6.3-1 TmStartState</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TmStartState</code>( <var class="Arg">program</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: the start state</p>
+
+<p>returns the start state of this <var class="Arg">program</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LoadPackage("turing");;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">program := TmProgram(TmState(1));;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TmStartState(program);</span>
+q1
+</pre></div>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap5_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap7_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chap7_mj.html">7</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

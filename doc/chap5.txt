@@ -1,0 +1,41 @@
+  
+  [1X5 [33X[0;0YState[133X[101X
+  
+  [33X[0;0YA  [5Xturing[105X  state  determines  how  a  [5Xturing[105X  [14X'[33X[0;0YMachine[133X'[114X  acts upon reading a
+  [14X'[33X[0;0YSymbol[133X'[114X from the [14X'[33X[0;0YTape[133X'[114X.[133X
+  
+  [33X[0;0YThere  are  two  kinds  of state: [13XRegular states[113X and [13XHalting states[113X. Halting
+  states signal that the [5Xturing[105X machine has halted.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XLoadPackage("turing");;[127X[104X
+    [4X[25Xgap>[125X [27Xq := TmState(1);[127X[104X
+    [4X[28Xq1[128X[104X
+    [4X[25Xgap>[125X [27Xh := TmHalt(1);[127X[104X
+    [4X[28Xh1[128X[104X
+    [4X[25Xgap>[125X [27XIsTuringHaltState(q);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsTuringState(h);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xq = h;[127X[104X
+    [4X[28Xfalse[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X5.1 [33X[0;0YConstructor[133X[101X
+  
+  [1X5.1-1 TmState[101X
+  
+  [33X[1;0Y[29X[2XTmState[102X( [3Xindex[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya [5Xturing[105X state[133X
+  
+  [33X[0;0YThis retuns a [5Xturing[105X state that can be used in a Program.[133X
+  
+  [1X5.1-2 TmHalt[101X
+  
+  [33X[1;0Y[29X[2XTmHalt[102X( [3Xindex[103X ) [32X operation[133X
+  [6XReturns:[106X  [33X[0;10Ya [5Xturing[105X halting state[133X
+  
+  [33X[0;0YThis  retuns a [5Xturing[105X state that can be used in a Program and signifies that
+  the machine has halted..[133X
+  

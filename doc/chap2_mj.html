@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<title>GAP (turing) - Chapter 2: Symbol</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap2"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chap7_mj.html">7</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap2.html">[MathJax off]</a></p>
+<p><a id="X86DC33A77B24C075" name="X86DC33A77B24C075"></a></p>
+<div class="ChapSects"><a href="chap2_mj.html#X86DC33A77B24C075">2 <span class="Heading">Symbol</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X7CC6903E78F24167">2.1 <span class="Heading">Categories</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X7ABF649E831D4D8E">2.2 <span class="Heading">Constructor</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X863A93CC78BC14EA">2.2-1 TmSymbol</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7FDA52F3809642B0">2.2-2 TmBlank</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X8698205F8648EB33">2.3 <span class="Heading">Representation</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X81E3DAF57AF23BB7">2.3-1 TmSymbolRepresentation</a></span>
+</div></div>
+</div>
+
+<h3>2 <span class="Heading">Symbol</span></h3>
+
+<p>Symbols are used to store information on the <a href="chap3_mj.html#X831862237FDAED86"><span class="RefLink"><span class="Heading">Tape</span></span></a>. It is akin to a character, which is used in its constructor.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LoadPackage("turing");;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">symbolI := TmSymbol('I');</span>
+&lt;symbol 'I'&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">symbolL := TmSymbol('L');</span>
+&lt;symbol 'L'&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">symbolI = symbolL;</span>
+false
+</pre></div>
+
+<p>There is a special symbol <em>blank</em>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LoadPackage("turing");;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TmBlank();</span>
+&lt;symbol blank&gt;
+</pre></div>
+
+<p><a id="X7CC6903E78F24167" name="X7CC6903E78F24167"></a></p>
+
+<h4>2.1 <span class="Heading">Categories</span></h4>
+
+<p>We define the following categories. One for all <strong class="pkg">turing</strong> symbols. and one for all the blank symbols.</p>
+
+<p><a id="X7ABF649E831D4D8E" name="X7ABF649E831D4D8E"></a></p>
+
+<h4>2.2 <span class="Heading">Constructor</span></h4>
+
+<p><a id="X863A93CC78BC14EA" name="X863A93CC78BC14EA"></a></p>
+
+<h5>2.2-1 TmSymbol</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TmSymbol</code>( <var class="Arg">representation</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a <strong class="pkg">turing</strong> symbol.</p>
+
+<p>This returns a <strong class="pkg">turing</strong> symbol when given a character <var class="Arg">representation</var>.</p>
+
+<p><a id="X7FDA52F3809642B0" name="X7FDA52F3809642B0"></a></p>
+
+<h5>2.2-2 TmBlank</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TmBlank</code>(  )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a <strong class="pkg">turing</strong> symbol.</p>
+
+<p>This returns the <strong class="pkg">turing</strong> blank symbol.</p>
+
+<p>All blank symbols are identical.</p>
+
+<p><a id="X8698205F8648EB33" name="X8698205F8648EB33"></a></p>
+
+<h4>2.3 <span class="Heading">Representation</span></h4>
+
+<p><a id="X81E3DAF57AF23BB7" name="X81E3DAF57AF23BB7"></a></p>
+
+<h5>2.3-1 TmSymbolRepresentation</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TmSymbolRepresentation</code>( <var class="Arg">symbol</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a string representing the <var class="Arg">symbol</var></p>
+
+<p>each symbol needs a representation that can be printed. This operation returns that representation.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LoadPackage("turing");;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">symbol := TmSymbol('I');;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TmSymbolRepresentation(symbol);</span>
+"I"
+</pre></div>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chap7_mj.html">7</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>
